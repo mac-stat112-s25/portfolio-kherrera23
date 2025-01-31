@@ -33,6 +33,7 @@ book:
 
     - part: "In-class Activities"
       chapters: 
+      - ica/Introduction.qmd
       - ica/ica-uni.qmd
       - ica/ica-bi.qmd
       - ica/ica-multi.qmd
