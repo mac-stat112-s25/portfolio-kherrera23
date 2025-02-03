@@ -1,10 +1,15 @@
 ---
 title: "Univariate Viz"
+number-sections: true
+execute: 
+  eval: false
 ---
 
 ## Exercises
 
 ```{r}
+#| eval: true
+
 # Import data
 hikes <- read.csv("https://mac-stat.github.io/data/high_peaks.csv")
 ```
@@ -14,6 +19,8 @@ hikes <- read.csv("https://mac-stat.github.io/data/high_peaks.csv")
 Let's dig into the `hikes` data, starting with the `elevation` and difficulty `ratings` of the hikes:
 
 ```{r}
+#| eval: true
+
 head(hikes)
 ```
 
@@ -97,12 +104,6 @@ ggplot(hikes, aes(x = rating)) +
   geom_bar(fill = "blue") +
   labs(x = "Rating", y = "Number of hikes")
 ```
-```{r}
-# COMMENT on the change in the code and the corresponding change in the plot
-ggplot(hikes, aes(x = rating)) +
-  labs(x = "Rating", y = "Number of hikes")
-```
-
 ```{r}
 # This code add a minimal theme which simplifies the plot design.
 ggplot(hikes, aes(x = rating)) +
