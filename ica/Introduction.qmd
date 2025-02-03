@@ -4,23 +4,7 @@ format: html
 ---
 ## Exercises
 
-{{< include activity-instructions.qmd >}}
-
 ### Exercise 1: RStudio {-}
-
-Launch RStudio.  Notice that there are four panes, each serving a different purpose. Today, we'll work within the **console** and will *not* save any work.
-
-```{r fig-main, fig.cap="RStudio Interface"}
-#| echo: false
-
-knitr::include_graphics("../images/RStudioImage.jpg")
-```
-
-::: {.callout-warning title="Problem with RStudio?"}
-
-If you have problem running RStudio on your machine, you can temporarily use [Mac's RStudio server](https://rstudio.macalester.edu/) after logging in using your Mac credentials.
-
-:::
 
 ### Exercise 2: Console {-}
 
@@ -37,7 +21,6 @@ We can use RStudio to do simple calculations using R.  Type the following lines 
 ```
 >4(2) give you an error because it needs the * to multiplicate 
 
-{{< include activity-check-with-partner.qmd >}}
 
 ### Exercise 3: Functions {-}
 
@@ -94,7 +77,6 @@ We'll learn lots and lots of functions this semester. Nobody has every function 
 -   `rep()` = repetition
 -   `seq()` = sequence
 
-{{< include activity-check-with-partner.qmd >}}
 
 ### Exercise 5: Practice {-}
 
@@ -160,7 +142,6 @@ Finally, try to print `degrees_tomorrow`. Take time to read the **error message*
 degrees_tomorrow
 ```
 
-{{< include activity-check-with-partner.qmd >}}
 
 ### Exercise 7: Practice {-}
 
