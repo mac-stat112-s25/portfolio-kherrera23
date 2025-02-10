@@ -207,6 +207,7 @@ You can use a "two-finger scroll" to zoom in and out.
 ```{r}
 # Load the leaflet package
 library(leaflet)
+library(tidyverse)
 
 # Just a plotting frame
 leaflet(data = fave_places)
@@ -747,6 +748,24 @@ ggplot(elections_by_counties, aes(map_id = county_fips, fill = repub_20_categori
 ### Exercise 10: Play around! {.unnumbered}
 
 Construct county-level maps of `median_rent` and `median_age`.
+```{r}
+ggplot(elections_by_counties, aes(map_id = county_fips, fill = median_rent)) +
+  geom_map(map = county_map) +
+  scale_fill_gradientn(colors = rev(brewer.pal(10, "RdBu")), name = "% Median Rent") +
+  expand_limits(x = county_map$long, y = county_map$lat) +
+  theme_map() +
+  theme(legend.position = "right") + 
+  coord_equal()
+```
+```{r}
+ggplot(elections_by_counties, aes(map_id = county_fips, fill = median_age)) +
+  geom_map(map = county_map) +
+  scale_fill_gradientn(colors = rev(brewer.pal(10, "RdBu")), name = "% Median Age") +
+  expand_limits(x = county_map$long, y = county_map$lat) +
+  theme_map() +
+  theme(legend.position = "right") + 
+  coord_equal()
+```
 
 ### Exercise 11: Choropleth maps with leaflet {.unnumbered}
 
