@@ -3,3 +3,30 @@ title: "Bivariate Viz"
 ---
 
 Use this file to generate a professional looking **bivariate** visualization.  The visualization will not perfect the first time but you are expected to improve it throughout the semester especially after covering advanced topics such as effective viz.
+
+```{r}
+library(tidyverse)
+library(ggplot2)
+library(dplyr)
+library(fivethirtyeight)
+
+data(bechdel)
+new_bechdel <- bechdel |>
+  mutate(clean_test = factor(clean_test, c("nowomen", "notalk", "men", "dubious", "ok"))) |>
+  mutate(half_decades = cut(year, breaks = seq(1969, 2014, by = 5)))
+
+```
+
+```{r}
+ggplot(new_bechdel, aes(x = half_decades, fill = clean_test)) +
+  geom_bar(position = "fill") +
+  scale_fill_manual(
+    name = "Test Results",
+    values = c("red", "salmon", "pink", "steelblue1", "steelblue4")) +
+  labs(
+    title = "Hollywood movies that pass the Bechdel test throughout time",
+    x = "Time frame",
+    y = "Percentage of movies") +
+    theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1)) 
+```
+

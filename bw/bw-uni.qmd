@@ -3,3 +3,19 @@ title: "Univariate Viz"
 ---
 
 Use this file to generate a professional looking **univariate** visualization. The visualization will not perfect the first time but you are expected to improve on it throughout the semester especially after covering advanced topics such as effective viz.
+
+```{r}
+library(mosaic)
+library(tidyverse)
+library(fivethirtyeight)
+
+survey <- read.csv("https://ajohns24.github.io/data/112/about_us_2024.csv")
+
+ggplot(survey, aes(x = fct_infreq(hangout))) +
+  labs( 
+    title = "Macalester College students's favorite places to hang out",
+    x = "Place", 
+    y = "Amount of Students") +
+  geom_bar(fill = "skyblue", color = "pink") +
+  theme_minimal()
+```

@@ -3,3 +3,32 @@ title: "Spatial Viz"
 ---
 
 Use this file to generate a professional looking **spatial** visualization.  The visualization will not perfect the first time but you are expected to improve on it throughout the semester especially after covering advanced topics such as effective viz.
+
+```{r}
+library(tidyverse)
+library(openintro)
+library(sf)
+library(maps)
+library(leaflet)
+library(rnaturalearth)
+library(mosaic)
+
+agencies <- read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/main/data/2025/2025-02-18/agencies.csv')
+
+states_map <- map_data("state")
+
+state_counts <- agencies %>%
+  group_by(state) %>%
+  summarise(num_agencies = n()) %>%
+  mutate(state = tolower(state))
+
+ggplot(state_counts, aes(map_id = state, fill = num_agencies)) +
+  geom_map(map = states_map) +
+  labs(title = "Geographic Distribution of Reporting Agencies",
+       fill = "Number of Agencies",
+       caption = "Source: FBI UCR Program") +
+  expand_limits(x = states_map$long, y = states_map$lat) +
+  theme_void() +
+  scale_fill_viridis_c()
+```
+
