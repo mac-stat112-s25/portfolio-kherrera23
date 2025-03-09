@@ -320,6 +320,7 @@ nrow(penguins)
 #### Part c {.unnumbered}
 
 Explain why we should only use `na.omit()` in extreme circumstances.
+
 Because we could use important information and/or observations because it is missing on variable but not the others. We should only do this in case we need all the variables for our research. If not the research could be misleading or bias and do not reflect the reality. 
 
 \
@@ -363,8 +364,8 @@ penguins|>
 
 ```{r}
 # Use a shortcut to keep only species and the length-related characteristics
-
-
+penguins|>
+  select(species, contains("length"))
 ```
 
 \
@@ -380,19 +381,19 @@ We've done examples where we need to `filter()` by more than one variable, or `s
 # Change this code to sort the penguins by species, and then island name
 # NOTE: The first row should be an Adelie penguin living on Biscoe island
 penguins |> 
-  arrange(species)
+  arrange(species, island)
 ```
 
 ```{r}
 # Change this code to count the number of male/female penguins observed for each species
 penguins |> 
-  count(species)
+  count(species, sex)
 ```
 
 ```{r}
 # Change this code to calculate the average body mass by species and sex
 penguins |> 
-  group_by(species) |> 
+  group_by(species, sex) |> 
   summarize(mean = mean(body_mass_g, na.rm = TRUE))
 
 ```
@@ -507,7 +508,7 @@ Create a new dataset named `daily_births` that includes the total number of birt
 daily_births <- Birthdays |>
   group_by(day) |>
   summarise(total_births = sum(births)) |>
-  mutate(day_of_week = wday(day, label = TRUE, abbr = TRUE))
+  mutate(day_of_week = wday(day, label = TRUE))
 
 daily_births
   
@@ -536,6 +537,13 @@ penguins |>
 Calculate the total number of births in each month and year, eg, Jan 1969, Feb 1969, .... Label month by names not numbers, eg, Jan not 1. Then, plot the births by month and comment on what you learn.
 
 ```{r}
+monthly_birthdays <- Birthdays |>
+  mutate(month_name = month(date, label = TRUE)) |>
+  group_by(year, month_name) |>
+  summarise(total_births = sum(births))
+
+ggplot(monthly_birthdays, aes(x = month_name, y = total_births)) +
+  geom_bar(stat = "identity", show.legend = FALSE) 
 ```
 
 #### Part b {.unnumbered}
@@ -543,6 +551,15 @@ Calculate the total number of births in each month and year, eg, Jan 1969, Feb 1
 In 1988, calculate the total number of births per week in each state. Get rid of week "53", which isn't a complete week! Then, make a line plot of births by week for each state and comment on what you learn. For example, do you notice any seasonal trends? Are these the same in every state? Any outliers?
 
 ```{r}
+weekly_births_1988 <- Birthdays |>
+  filter(year == 1988) |>
+  mutate(week_of_year = week(date)) |>
+  filter(week_of_year != 53) |>
+  group_by(state, week_of_year) |>
+  summarise(total_births = sum(births))
+
+ggplot(weekly_births_1988, aes(y = total_births, x = week_of_year, colour = state)) +
+  geom_line()
 ```
 
 #### Part c {.unnumbered}
@@ -550,6 +567,16 @@ In 1988, calculate the total number of births per week in each state. Get rid of
 Repeat the above for just Minnesota (MN) and Louisiana (LA). MN has one of the coldest climates and LA has one of the warmest. How do their seasonal trends compare? Do you think these trends are similar in other colder and warmer states? Try it!
 
 ```{r}
+MN_LA_births <- Birthdays |>
+  filter(year == 1988, state %in% c("MN", "LA")) |>
+  mutate(week_of_year = week(date)) |>
+  filter(week_of_year != 53) |>
+  group_by(state, week_of_year) |>
+  summarise(total_births = sum(births))
+
+ggplot(MN_LA_births, aes(x = week_of_year, y = total_births, color = state)) +
+  geom_line()
+
 ```
 
 
@@ -561,6 +588,8 @@ Repeat the above for just Minnesota (MN) and Louisiana (LA). MN has one of the c
 Create a dataset with only births in Massachusetts (MA) in 1979 and sort the days from those with the most births to those with the fewest.
 
 ```{r}
+MA_1979_Births <- Birthdays |>
+  group_by()
 ```
 
 #### Part b {.unnumbered}
