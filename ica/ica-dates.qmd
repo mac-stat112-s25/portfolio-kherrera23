@@ -583,13 +583,16 @@ ggplot(MN_LA_births, aes(x = week_of_year, y = total_births, color = state)) +
 
 ### Exercise 8: More Practice {.unnumbered}
 
-#### Part a {.unnumbered}
+#### Part a 
 
 Create a dataset with only births in Massachusetts (MA) in 1979 and sort the days from those with the most births to those with the fewest.
 
 ```{r}
 MA_1979_Births <- Birthdays |>
-  group_by()
+  filter(year == 1979, state == "MA") |>
+  arrange(desc(births))
+
+head(MA_1979_Births)
 ```
 
 #### Part b {.unnumbered}
