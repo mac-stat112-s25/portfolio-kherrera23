@@ -1,5 +1,6 @@
 ---
 title: "solo-project"
+code-fold: true
 ---
 
 ```{r}
