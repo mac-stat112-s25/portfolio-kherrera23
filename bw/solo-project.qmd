@@ -1,6 +1,6 @@
 ---
 title: "solo-project"
-code-fold: true
+echo: true
 ---
 
 ```{r}
