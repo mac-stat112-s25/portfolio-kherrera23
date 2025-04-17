@@ -34,8 +34,8 @@ book:
       - bw/exam-2.qmd
       - bw/solo-project.qmd
       
-   - part: "Summary Sheets"
-     chapters:
+    - part: "Summary Sheets"
+      chapters:
       - ss/ss-1.qmd
       - ss/ss-2.qmd
 
