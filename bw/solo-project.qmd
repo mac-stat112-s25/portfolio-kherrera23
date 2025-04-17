@@ -1,6 +1,13 @@
 ---
-title: "solo-project"
-echo: true
+title: "Solo project"
+execute:
+  echo: true
+  warning: false
+  error: false
+
+format: 
+  html: 
+    code-fold: true
 ---
 
 ```{r}
@@ -27,7 +34,7 @@ mn_winners <- mn_election |>
   TRUE ~ "Other"
   ))
 ```
-```{r}
+```{r load-map, message = FALSE, warning = FALSE}
 # Minnesota county map
 mn_map <- counties(state = "MN", class = "sf")
 mn_map <- mn_map |>
@@ -40,8 +47,10 @@ mn_map <- mn_map |>
 ggplot(mn_map) +
   geom_sf(aes(fill = winner), color = "white") +
   scale_fill_manual(values = c("Trump" = "red", "Clinton" = "blue", "Other" = "gray")) +
-  labs(title = "Minnesota 2016 Presidential Election Results (per county)", 
-       fill = "Winning Candidate") +
+  labs(title = "Minnesota 2016 Presidential Election Results (by county)",
+       subtitle = "Candidate with the most votes in each county - not proportional to population",
+       fill = "Winning Candidate",
+       caption = "Source: MIT Election Data and Science Lab, Harvard Dataverse (2019)") +
   theme_map()
 ```
 ::: {.callout-note title="Summary"}
