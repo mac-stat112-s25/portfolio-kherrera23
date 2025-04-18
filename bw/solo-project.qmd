@@ -14,7 +14,6 @@ format:
 library(ggplot2)
 library(dplyr)
 library(readr)
-library(tigris)
 library(tidyverse) 
 library(maps)
 library(ggthemes)
@@ -34,8 +33,10 @@ mn_winners <- mn_election |>
   TRUE ~ "Other"
   ))
 ```
-```{r load-map, message = FALSE, warning = FALSE}
+```{r setup-map, message = FALSE, warning = FALSE}
 # Minnesota county map
+library(tigris)
+options(tigris_use_cache = TRUE)
 mn_map <- counties(state = "MN", class = "sf")
 mn_map <- mn_map |>
   mutate(county = str_remove(NAME, "County"))

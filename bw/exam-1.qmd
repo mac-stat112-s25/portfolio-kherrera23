@@ -1,5 +1,77 @@
 ---
-title: "exam-1"
+title: "Exam 1"
 format: html
 ---
 
+```{r}
+library(tidyverse)
+library(tidytuesdayR)
+
+tuesdata <- tt_load('2020-02-18')
+fc <- tuesdata$food_consumption
+```
+**Research questions:** What does the consumption of each food category in each country looks like?
+
+```{r}
+str(fc)
+dim(fc)
+head(fc)
+tail(fc)
+```
+```{r}
+# Understanding consumption 
+#| fig-height: 22
+#| fig-width: 11
+
+# Overall food consumption per category
+ggplot(fc, aes(x = consumption)) +
+  geom_histogram() +
+  facet_wrap(~ food_category, scales = "free") +
+  labs(
+    title = "Distribution of Food Consumption by Category",
+    x = "Kg per Person per year",
+    y = "Number of countries"
+  )
+```
+
+::: {.callout-note title="Summary"}
+
+:::
+
+```{r}
+#| fig-height: 22
+#| fig-width: 11
+# Overall food consumption per country 
+ggplot(fc, aes(x = consumption)) +
+  geom_histogram() +
+  facet_wrap(~ country, scales = "free") +
+  labs(
+    title = "Distribution of Food Consumption per Country",
+    x = "Kg per Person per year",
+    y = "c"
+  )
+```
+
+::: {.callout-note title="Summary"}
+
+:::
+
+```{r}
+#| fig-height: 22
+#| fig-width: 11
+# Answering the question
+
+ggplot(fc, aes(x = reorder(country, consumption), y = consumption)) +
+  geom_col() +
+  facet_wrap(~ food_category, scales = "free_y") +
+  labs(
+    title = "Food Consumption by Country and Category",
+    x = "Country",
+    y = "Consumption (kg/person/year)"
+  ) +
+  theme_minimal()
+```
+
+::: {.callout-note title="Summary"}
+
+:::
