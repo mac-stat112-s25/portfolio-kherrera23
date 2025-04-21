@@ -1,13 +1,10 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.5.57">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
-
-<title>8&nbsp; Mulivariate Viz – COMP/STAT112 Notebook</title>
+<title>14&nbsp; Multivariate Viz – COMP/STAT112 Notebook</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -56,7 +53,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 </style>
 
-
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -75,8 +71,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<script id="quarto-search-options" type="application/json">{
+<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark"><script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -102,37 +97,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script>
-
-
-<link rel="stylesheet" href="../style/custom.css">
+}</script><link rel="stylesheet" href="../style/custom.css">
 </head>
-
 <body class="nav-sidebar docked">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
+  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../ica/ica-uni.html">In-class Activities</a></li><li class="breadcrumb-item"><a href="../ica/ica-multi.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Mulivariate Viz</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../ica/Introduction.html">In-class Activities</a></li><li class="breadcrumb-item"><a href="../ica/ica-multi.html"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Multivariate Viz</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
-  </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="../">Your Name Here</a> 
+      <a href="../">Kirsty Herrera Garcia</a> 
         <div class="sidebar-tools-main">
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
   <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
@@ -150,7 +135,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Welcome</span></a>
@@ -164,8 +149,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../bw/bw-uni.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Univariate Viz</span></span></a>
@@ -195,57 +180,182 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Spatial Viz</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../bw/exam-1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Exam 1</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../bw/exam-2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Exam 2</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../bw/solo-project.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Solo project</span></span></a>
+  </div>
+</li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
- <span class="menu-text">In-class Activities</span></a>
+ <span class="menu-text">Summary Sheets</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ss/ss-1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">ss-1</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ss/ss-2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">ss-2</span></span></a>
+  </div>
+</li>
+      </ul>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">In-class Activities</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ica/Introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+  </div>
+</li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../ica/ica-uni.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Univariate Viz</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Univariate Viz</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../ica/ica-bi.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Bivariate Viz</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Bivariate Viz</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../ica/ica-multi.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Mulivariate Viz</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Multivariate Viz</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../ica/ica-spatial.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Spatial Viz</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Spatial Viz</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ica/ica-effective.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Effective Viz</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ica/ica-wrangling.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Wrangling</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ica/ica-dates.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Dates</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ica/ica-reshaping.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Reshaping</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ica/ica-joining.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Joining</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ica/ica-factors.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Factors</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ica/ica-dataimport.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Data Import</span></span></a>
   </div>
 </li>
       </ul>
-  </li>
+</li>
     </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+</div>
+</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+<li>
+<a href="#review" id="toc-review" class="nav-link active" data-scroll-target="#review"><span class="header-section-number">14.1</span> Review</a>
+  <ul class="collapse">
+<li><a href="#example-1" id="toc-example-1" class="nav-link" data-scroll-target="#example-1">Example 1</a></li>
+  <li><a href="#example-2" id="toc-example-2" class="nav-link" data-scroll-target="#example-2">Example 2</a></li>
+  <li><a href="#example-3" id="toc-example-3" class="nav-link" data-scroll-target="#example-3">Example 3</a></li>
+  <li><a href="#example-4" id="toc-example-4" class="nav-link" data-scroll-target="#example-4">Example 4</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#new-stuff" id="toc-new-stuff" class="nav-link" data-scroll-target="#new-stuff"><span class="header-section-number">14.2</span> New Stuff</a>
+  <ul class="collapse">
+<li><a href="#example-5" id="toc-example-5" class="nav-link" data-scroll-target="#example-5">Example 5</a></li>
+  <li><a href="#example-6" id="toc-example-6" class="nav-link" data-scroll-target="#example-6">Example 6</a></li>
+  <li><a href="#example-7" id="toc-example-7" class="nav-link" data-scroll-target="#example-7">Example 7</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#exercises-required" id="toc-exercises-required" class="nav-link" data-scroll-target="#exercises-required"><span class="header-section-number">14.3</span> Exercises (required)</a>
+  <ul class="collapse">
+<li><a href="#the-story" id="toc-the-story" class="nav-link" data-scroll-target="#the-story">The story</a></li>
+  <li><a href="#exercise-1-sat-scores" id="toc-exercise-1-sat-scores" class="nav-link" data-scroll-target="#exercise-1-sat-scores">Exercise 1: SAT scores</a></li>
+  <li><a href="#exercise-2-sat-scores-vs-per-pupil-spending-sat-scores-vs-salaries" id="toc-exercise-2-sat-scores-vs-per-pupil-spending-sat-scores-vs-salaries" class="nav-link" data-scroll-target="#exercise-2-sat-scores-vs-per-pupil-spending-sat-scores-vs-salaries">Exercise 2: SAT Scores vs Per Pupil Spending &amp; SAT Scores vs Salaries</a></li>
+  <li><a href="#exercise-3-sat-scores-vs-per-pupil-spending-and-teacher-salaries" id="toc-exercise-3-sat-scores-vs-per-pupil-spending-and-teacher-salaries" class="nav-link" data-scroll-target="#exercise-3-sat-scores-vs-per-pupil-spending-and-teacher-salaries">Exercise 3: SAT Scores vs Per Pupil Spending <em>and</em> Teacher Salaries</a></li>
+  <li><a href="#exercise-4-another-way-to-incorporate-scale" id="toc-exercise-4-another-way-to-incorporate-scale" class="nav-link" data-scroll-target="#exercise-4-another-way-to-incorporate-scale">Exercise 4: Another way to Incorporate Scale</a></li>
+  <li><a href="#exercise-5-finally-an-explanation" id="toc-exercise-5-finally-an-explanation" class="nav-link" data-scroll-target="#exercise-5-finally-an-explanation">Exercise 5: Finally an Explanation</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#exercises-optional" id="toc-exercises-optional" class="nav-link" data-scroll-target="#exercises-optional"><span class="header-section-number">14.4</span> Exercises (optional)</a>
+  <ul class="collapse">
+<li><a href="#exercise-6-heat-maps" id="toc-exercise-6-heat-maps" class="nav-link" data-scroll-target="#exercise-6-heat-maps">Exercise 6: Heat Maps</a></li>
+  <li><a href="#exercise-7-star-plots" id="toc-exercise-7-star-plots" class="nav-link" data-scroll-target="#exercise-7-star-plots">Exercise 7: Star plots</a></li>
+  </ul>
+</li>
+  </ul></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../ica/ica-uni.html">In-class Activities</a></li><li class="breadcrumb-item"><a href="../ica/ica-multi.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Mulivariate Viz</span></a></li></ol></nav>
-<div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Mulivariate Viz</span></h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../ica/Introduction.html">In-class Activities</a></li><li class="breadcrumb-item"><a href="../ica/ica-multi.html"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Multivariate Viz</span></a></li></ol></nav><div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title">
+<span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Multivariate Viz</span>
+</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
 
 
@@ -259,17 +369,917 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
 
 
-</header>
-
-
-<p>Use this file for practice with the <strong>mulivariate viz</strong> in-class activity. Refer to the class website for details.</p>
+</header><section id="review" class="level2" data-number="14.1"><h2 data-number="14.1" class="anchored" data-anchor-id="review">
+<span class="header-section-number">14.1</span> Review</h2>
+<p>Let’s review some <em>univariate</em> and <em>bivariate</em> plotting concepts using some daily weather data from Australia. This is a subset of the data from the <code>weatherAUS</code> data in the <code>rattle</code> package.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2"></a></span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="co"># Import data</span></span>
+<span id="cb1-4"><a href="#cb1-4"></a>weather <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"https://mac-stat.github.io/data/weather_3_locations.csv"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb1-5"><a href="#cb1-5"></a>  <span class="fu">mutate</span>(<span class="at">date =</span> <span class="fu">as.Date</span>(date))  </span>
+<span id="cb1-6"><a href="#cb1-6"></a></span>
+<span id="cb1-7"><a href="#cb1-7"></a><span class="co"># Check out the first 6 rows</span></span>
+<span id="cb1-8"><a href="#cb1-8"></a><span class="fu">head</span>(weather)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>        date   location mintemp maxtemp rainfall evaporation sunshine
+1 2020-01-01 Wollongong    17.1    23.1        0          NA       NA
+2 2020-01-02 Wollongong    17.7    24.2        0          NA       NA
+3 2020-01-03 Wollongong    19.7    26.8        0          NA       NA
+4 2020-01-04 Wollongong    20.4    35.5        0          NA       NA
+5 2020-01-05 Wollongong    19.8    21.4        0          NA       NA
+6 2020-01-06 Wollongong    18.3    22.9        0          NA       NA
+  windgustdir windgustspeed winddir9am winddir3pm windspeed9am windspeed3pm
+1         SSW            39        SSW        SSE           20           15
+2         SSW            37          S        ENE           13           15
+3          NE            41        NNW        NNE            7           17
+4         SSW            78         NE        NNE           15           17
+5         SSW            57        SSW          S           31           35
+6          NE            35        ESE         NE           17           20
+  humidity9am humidity3pm pressure9am pressure3pm cloud9am cloud3pm temp9am
+1          69          64      1014.9      1014.0        8        1    19.1
+2          72          54      1020.1      1017.7        7        1    19.8
+3          72          71      1017.5      1013.0        6       NA    23.4
+4          77          69      1008.8      1003.9       NA       NA    24.5
+5          70          75      1018.9      1019.9       NA        7    20.7
+6          71          71      1021.2      1018.2       NA       NA    20.9
+  temp3pm raintoday risk_mm raintomorrow
+1    22.9        No     0.0           No
+2    23.6        No     0.0           No
+3    25.7        No     0.0           No
+4    26.7        No     0.0           No
+5    20.0        No     0.0           No
+6    22.6        No     0.8           No</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="co"># What are the units of observation?</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a><span class="fu">colnames</span>(weather)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "date"          "location"      "mintemp"       "maxtemp"      
+ [5] "rainfall"      "evaporation"   "sunshine"      "windgustdir"  
+ [9] "windgustspeed" "winddir9am"    "winddir3pm"    "windspeed9am" 
+[13] "windspeed3pm"  "humidity9am"   "humidity3pm"   "pressure9am"  
+[17] "pressure3pm"   "cloud9am"      "cloud3pm"      "temp9am"      
+[21] "temp3pm"       "raintoday"     "risk_mm"       "raintomorrow" </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="co"># How many data points do we have? </span></span>
+<span id="cb5-2"><a href="#cb5-2"></a><span class="fu">nrow</span>(weather)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2367</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="co"># What type of variables do we have?</span></span>
+<span id="cb7-2"><a href="#cb7-2"></a><span class="fu">str</span>(weather)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>'data.frame':   2367 obs. of  24 variables:
+ $ date         : Date, format: "2020-01-01" "2020-01-02" ...
+ $ location     : chr  "Wollongong" "Wollongong" "Wollongong" "Wollongong" ...
+ $ mintemp      : num  17.1 17.7 19.7 20.4 19.8 18.3 19.9 20.1 19.8 20.5 ...
+ $ maxtemp      : num  23.1 24.2 26.8 35.5 21.4 22.9 25.6 23.2 23.1 25.4 ...
+ $ rainfall     : num  0 0 0 0 0 0 0.8 1.6 0 0 ...
+ $ evaporation  : num  NA NA NA NA NA NA NA NA NA NA ...
+ $ sunshine     : num  NA NA NA NA NA NA NA NA NA NA ...
+ $ windgustdir  : chr  "SSW" "SSW" "NE" "SSW" ...
+ $ windgustspeed: int  39 37 41 78 57 35 44 41 39 56 ...
+ $ winddir9am   : chr  "SSW" "S" "NNW" "NE" ...
+ $ winddir3pm   : chr  "SSE" "ENE" "NNE" "NNE" ...
+ $ windspeed9am : int  20 13 7 15 31 17 30 31 24 19 ...
+ $ windspeed3pm : int  15 15 17 17 35 20 7 33 26 39 ...
+ $ humidity9am  : int  69 72 72 77 70 71 76 77 76 79 ...
+ $ humidity3pm  : int  64 54 71 69 75 71 72 76 79 76 ...
+ $ pressure9am  : num  1015 1020 1018 1009 1019 ...
+ $ pressure3pm  : num  1014 1018 1013 1004 1020 ...
+ $ cloud9am     : int  8 7 6 NA NA NA NA 8 NA NA ...
+ $ cloud3pm     : int  1 1 NA NA 7 NA NA NA NA NA ...
+ $ temp9am      : num  19.1 19.8 23.4 24.5 20.7 20.9 22.9 21.3 21.2 23 ...
+ $ temp3pm      : num  22.9 23.6 25.7 26.7 20 22.6 24.9 22.2 22.2 25.1 ...
+ $ raintoday    : chr  "No" "No" "No" "No" ...
+ $ risk_mm      : num  0 0 0 0 0 0.8 1.6 0 0 1 ...
+ $ raintomorrow : chr  "No" "No" "No" "No" ...</code></pre>
+</div>
+</div>
+<section id="example-1" class="level3 unnumbered"><h3 class="unnumbered anchored" data-anchor-id="example-1">Example 1</h3>
+<p>Construct a plot that allows us to examine how <code>temp3pm</code> varies.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="fu">ggplot</span>(weather, <span class="fu">aes</span>(<span class="at">x =</span> temp3pm))<span class="sc">+</span></span>
+<span id="cb9-2"><a href="#cb9-2"></a>  <span class="fu">geom_density</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="ica-multi_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="408"></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section id="example-2" class="level3 unnumbered"><h3 class="unnumbered anchored" data-anchor-id="example-2">Example 2</h3>
+<p>Construct 3 plots that address the following research question:</p>
+<p>How do afternoon temperatures (<code>temp3pm</code>) differ by <code>location</code>?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="co"># Plot 1 (no facets &amp; starting from a density plot of temp3pm)</span></span>
+<span id="cb10-2"><a href="#cb10-2"></a><span class="fu">ggplot</span>(weather, <span class="fu">aes</span>(<span class="at">x =</span> temp3pm)) <span class="sc">+</span> </span>
+<span id="cb10-3"><a href="#cb10-3"></a>  <span class="fu">geom_density</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="ica-multi_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="408"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="co"># Plot 2 (no facets or densities)</span></span>
+<span id="cb11-2"><a href="#cb11-2"></a><span class="fu">ggplot</span>(weather, <span class="fu">aes</span>(<span class="at">x =</span> temp3pm)) <span class="sc">+</span> </span>
+<span id="cb11-3"><a href="#cb11-3"></a>  <span class="fu">geom_histogram</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="ica-multi_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="408"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="co"># Plot 3 (facets)</span></span>
+<span id="cb12-2"><a href="#cb12-2"></a><span class="fu">ggplot</span>(weather, <span class="fu">aes</span>(<span class="at">x =</span> temp3pm)) <span class="sc">+</span> </span>
+<span id="cb12-3"><a href="#cb12-3"></a>  <span class="fu">geom_density</span>() <span class="sc">+</span></span>
+<span id="cb12-4"><a href="#cb12-4"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>location)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="ica-multi_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="408"></p>
+</figure>
+</div>
+</div>
+</div>
+<section id="reflection" class="level4 unnumbered"><h4 class="unnumbered anchored" data-anchor-id="reflection">Reflection</h4>
+<ul>
+<li>Temperatures tend to be highest, and most variable, in Uluru. There, they range from ~10 to ~45 with a typical temp around ~30 degrees.</li>
+<li>Temperatures tend to be lowest in Hobart. There, they range from ~5 to ~45 with a typical temp around ~15 degrees.</li>
+<li>Wollongong temps are in between and are the least variable from day to day.</li>
+</ul>
+<p><strong>SUBTLETIES: Defining <code>fill</code> or <code>color</code> by a variable</strong></p>
+<p>How we define the <code>fill</code> or <code>color</code> depends upon whether we’re defining it by a named color or by some variable in our dataset. For example:</p>
+<ul>
+<li><p><code>geom___(fill = "blue")</code><br><em>named</em> colors are defined outside the <code>aes</code>thetics and put in quotes</p></li>
+<li><p><code>geom___(aes(fill = variable))</code> or <code>ggplot(___, aes(fill = variable))</code><br>
+colors/fills defined by a <em>variable</em> are defined inside the <code>aes</code>thetics</p></li>
+</ul></section></section><section id="example-3" class="level3 unnumbered"><h3 class="unnumbered anchored" data-anchor-id="example-3">Example 3</h3>
+<p>Let’s consider Wollongong alone:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="co"># Don't worry about the syntax (we'll learn it soon)</span></span>
+<span id="cb13-2"><a href="#cb13-2"></a>woll <span class="ot">&lt;-</span> weather <span class="sc">|&gt;</span></span>
+<span id="cb13-3"><a href="#cb13-3"></a>  <span class="fu">filter</span>(location <span class="sc">==</span> <span class="st">"Wollongong"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb13-4"><a href="#cb13-4"></a>  <span class="fu">mutate</span>(<span class="at">date =</span> <span class="fu">as.Date</span>(date))  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="co"># How often does it raintoday?</span></span>
+<span id="cb14-2"><a href="#cb14-2"></a><span class="co"># Fill your geometric layer with the color blue.</span></span>
+<span id="cb14-3"><a href="#cb14-3"></a><span class="fu">ggplot</span>(woll, <span class="fu">aes</span>(<span class="at">x =</span> raintoday)) <span class="sc">+</span></span>
+<span id="cb14-4"><a href="#cb14-4"></a>  <span class="fu">geom_bar</span>(<span class="at">fill =</span> <span class="st">"blue"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="ica-multi_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="408"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a><span class="co"># If it does raintoday, what does this tell us about raintomorrow?</span></span>
+<span id="cb15-2"><a href="#cb15-2"></a><span class="co"># Use your intuition first</span></span>
+<span id="cb15-3"><a href="#cb15-3"></a><span class="fu">ggplot</span>(woll, <span class="fu">aes</span>(<span class="at">x =</span> raintoday, <span class="at">fill =</span> raintomorrow)) <span class="sc">+</span></span>
+<span id="cb15-4"><a href="#cb15-4"></a>  <span class="fu">geom_bar</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="ica-multi_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="408"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="co"># Now compare different approaches</span></span>
+<span id="cb16-2"><a href="#cb16-2"></a></span>
+<span id="cb16-3"><a href="#cb16-3"></a><span class="co"># Default: stacked bars</span></span>
+<span id="cb16-4"><a href="#cb16-4"></a><span class="fu">ggplot</span>(woll, <span class="fu">aes</span>(<span class="at">x =</span> raintoday, <span class="at">fill =</span> raintomorrow)) <span class="sc">+</span> </span>
+<span id="cb16-5"><a href="#cb16-5"></a>  <span class="fu">geom_bar</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="ica-multi_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="408"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a><span class="co"># Side-by-side bars</span></span>
+<span id="cb17-2"><a href="#cb17-2"></a><span class="fu">ggplot</span>(woll, <span class="fu">aes</span>(<span class="at">x =</span> raintoday, <span class="at">fill =</span> raintomorrow)) <span class="sc">+</span> </span>
+<span id="cb17-3"><a href="#cb17-3"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">"dodge"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="ica-multi_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="408"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a><span class="co"># Proportional bars</span></span>
+<span id="cb18-2"><a href="#cb18-2"></a><span class="co"># position = "fill" refers to filling the frame, nothing to do with the color-related fill</span></span>
+<span id="cb18-3"><a href="#cb18-3"></a><span class="fu">ggplot</span>(woll, <span class="fu">aes</span>(<span class="at">x =</span> raintoday, <span class="at">fill =</span> raintomorrow)) <span class="sc">+</span> </span>
+<span id="cb18-4"><a href="#cb18-4"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">"fill"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="ica-multi_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="408"></p>
+</figure>
+</div>
+</div>
+</div>
+<section id="reflection-1" class="level4 unnumbered"><h4 class="unnumbered anchored" data-anchor-id="reflection-1">Reflection</h4>
+<p>There’s often not one “best plot”, but a <em>combination</em> of plots that provide a complete picture:</p>
+<ul>
+<li>The stacked and side-by-side bars reflect that on most days, it does <em>not</em> rain.</li>
+<li>The proportional / filled bars <em>lose</em> that information, but make it easier to compare proportions: it’s more likely to rain tomorrow if it also rains today.</li>
+</ul></section></section><section id="example-4" class="level3 unnumbered"><h3 class="unnumbered anchored" data-anchor-id="example-4">Example 4</h3>
+<p>Construct a plot that illustrates how 3pm temperatures (temp3pm) vary by <code>date</code> in Wollongong. Represent each day on the plot and use a curve/line to help highlight the trends.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a><span class="co"># THINK: What variable goes on the y-axis?</span></span>
+<span id="cb19-2"><a href="#cb19-2"></a><span class="co"># For the curve, try adding span = 0.5 to tweak the curvature</span></span>
+<span id="cb19-3"><a href="#cb19-3"></a><span class="fu">ggplot</span>(woll, <span class="fu">aes</span>(<span class="at">x =</span> date, <span class="at">y =</span> temp3pm))<span class="sc">+</span></span>
+<span id="cb19-4"><a href="#cb19-4"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb19-5"><a href="#cb19-5"></a>  <span class="fu">geom_smooth</span> (<span class="at">span =</span> <span class="fl">0.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="ica-multi_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" width="408"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a><span class="co"># Instead of a curve that captures the general TREND,</span></span>
+<span id="cb20-2"><a href="#cb20-2"></a><span class="co"># draw a line that illustrates the movement of RAW temperatures from day to day</span></span>
+<span id="cb20-3"><a href="#cb20-3"></a><span class="co"># </span><span class="al">NOTE</span><span class="co">: We haven't learned this geom yet! Guess.</span></span>
+<span id="cb20-4"><a href="#cb20-4"></a><span class="fu">ggplot</span>(woll, <span class="fu">aes</span>(<span class="at">y =</span> temp3pm, <span class="at">x =</span> date)) <span class="sc">+</span></span>
+<span id="cb20-5"><a href="#cb20-5"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb20-6"><a href="#cb20-6"></a>  <span class="fu">geom_line</span>(<span class="at">color =</span> <span class="st">"skyblue"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="ica-multi_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid figure-img" width="408"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>NOTE:</strong> A line plot isn’t always appropriate! It can be useful in situations like this, when our data are chronological.</p>
+<section id="reflection-2" class="level4 unnumbered"><h4 class="unnumbered anchored" data-anchor-id="reflection-2">Reflection</h4>
+<p>There’s a seasonal / cyclic behavior in temperatures – they’re highest in January (around 23 degrees) and lowest in July (around 16 degrees). There are also some outliers – some abnormally hot and cold days.</p>
+</section></section></section><section id="new-stuff" class="level2" data-number="14.2"><h2 data-number="14.2" class="anchored" data-anchor-id="new-stuff">
+<span class="header-section-number">14.2</span> New Stuff</h2>
+<p>Next, let’s consider the entire <code>weather</code> data for all 3 locations. The addition of <code>location</code> adds a 3rd variable into our research questions:</p>
+<ul>
+<li>How does the relationship between <code>raintoday</code> and <code>raintomorrow</code> vary by <code>location</code>?</li>
+<li>How does the behavior of <code>temp3pm</code> over <code>date</code> vary by <code>location</code>?</li>
+<li>And so on.</li>
+</ul>
+<p>Thus far, we’ve focused on the following components of a plot:</p>
+<ul>
+<li>setting up a <strong>frame</strong>
+</li>
+<li>adding <strong>layers</strong> / geometric elements</li>
+<li>splitting the plot into <strong>facets</strong> for different groups / categories</li>
+<li>change the <strong>theme</strong>, e.g.&nbsp;axis labels, color, fill</li>
+</ul>
+<p>We’ll have to think about all of this, along with <strong>scales</strong>. Scales change the color, fill, size, shape, or other properties according to the levels of a new <em>variable</em>. This is different than just assigning scale by, for example, <code>color = "blue"</code>.</p>
+<p>Work on the examples below in your groups. Check in with your intuition! We’ll then discuss as a group as relevant.</p>
+<section id="example-5" class="level3 unnumbered"><h3 class="unnumbered anchored" data-anchor-id="example-5">Example 5</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a><span class="co"># Plot temp3pm vs temp9am</span></span>
+<span id="cb21-2"><a href="#cb21-2"></a><span class="co"># Change the code in order to indicate the location to which each data point corresponds</span></span>
+<span id="cb21-3"><a href="#cb21-3"></a><span class="fu">ggplot</span>(weather, <span class="fu">aes</span>(<span class="at">y =</span> temp3pm, <span class="at">x =</span> temp9am, <span class="at">color =</span> location)) <span class="sc">+</span> </span>
+<span id="cb21-4"><a href="#cb21-4"></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="ica-multi_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid figure-img" width="408"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a><span class="co"># Change the code in order to indicate the location to which each data point corresponds</span></span>
+<span id="cb22-2"><a href="#cb22-2"></a><span class="co"># AND identify the days on which it rained / didn't raintoday</span></span>
+<span id="cb22-3"><a href="#cb22-3"></a><span class="fu">ggplot</span>(weather, <span class="fu">aes</span>(<span class="at">y =</span> temp3pm, <span class="at">x =</span> temp9am, <span class="at">color =</span> location)) <span class="sc">+</span> </span>
+<span id="cb22-4"><a href="#cb22-4"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb22-5"><a href="#cb22-5"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>raintoday)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="ica-multi_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid figure-img" width="408"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a><span class="co"># How many ways can you think to make that plot of temp3pm vs temp9am with info about location and rain?</span></span>
+<span id="cb23-2"><a href="#cb23-2"></a><span class="co"># Play around!</span></span>
+<span id="cb23-3"><a href="#cb23-3"></a></span>
+<span id="cb23-4"><a href="#cb23-4"></a><span class="fu">ggplot</span>(weather, <span class="fu">aes</span>(<span class="at">y =</span> temp3pm, <span class="at">x =</span> temp9am, <span class="at">color =</span> location, <span class="at">shape =</span> raintoday)) <span class="sc">+</span> </span>
+<span id="cb23-5"><a href="#cb23-5"></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="ica-multi_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid figure-img" width="408"></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section id="example-6" class="level3 unnumbered"><h3 class="unnumbered anchored" data-anchor-id="example-6">Example 6</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a><span class="co"># Change the code in order to construct a line plot of temp3pm vs date for each separate location (no points!)</span></span>
+<span id="cb24-2"><a href="#cb24-2"></a><span class="fu">ggplot</span>(weather, <span class="fu">aes</span>(<span class="at">y =</span> temp3pm, <span class="at">x =</span> date, <span class="at">color =</span> location, <span class="at">group =</span> location)) <span class="sc">+</span> </span>
+<span id="cb24-3"><a href="#cb24-3"></a>  <span class="fu">geom_line</span>(<span class="at">linewidth =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb24-4"><a href="#cb24-4"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="ica-multi_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid figure-img" width="408"></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section id="example-7" class="level3 unnumbered"><h3 class="unnumbered anchored" data-anchor-id="example-7">Example 7</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a><span class="co"># Plot the relationship of raintomorrow &amp; raintoday</span></span>
+<span id="cb25-2"><a href="#cb25-2"></a><span class="co"># Change the code in order to indicate this relationship by location</span></span>
+<span id="cb25-3"><a href="#cb25-3"></a><span class="fu">ggplot</span>(weather, <span class="fu">aes</span>(<span class="at">x =</span> raintoday, <span class="at">fill =</span> raintomorrow)) <span class="sc">+</span> </span>
+<span id="cb25-4"><a href="#cb25-4"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">"fill"</span>) <span class="sc">+</span></span>
+<span id="cb25-5"><a href="#cb25-5"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>location)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="ica-multi_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid figure-img" width="408"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="How to Not Get Overwhelmed?">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+How to Not Get Overwhelmed?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>There’s no end to the number and type of visualizations you <em>could</em> make. And it’s important to not just throw spaghetti at the wall until something sticks. <a href="http://flowingdata.com/2017/01/24/one-dataset-visualized-25-ways/">FlowingData</a> shows that one dataset can be visualized <em>many</em> ways, and makes good recommendations for data viz workflow, which we modify and build upon here:</p>
+<ul>
+<li><p><strong>Identify simple research questions.</strong><br>
+What do you want to understand about the variables or the relationships among them?</p></li>
+<li>
+<p><strong>Start with the basics and work incrementally.</strong></p>
+<ul>
+<li>Identify what variables you want to include in your plot and what structure these have (eg: categorical, quantitative, dates)</li>
+<li>Start simply. Build a plot of just 1 of these variables, or the relationship between 2 of these variables.</li>
+<li>Set up a plotting frame and add just <strong>one geometric layer at a time</strong>.</li>
+<li>Start tweaking: add whatever new variables you want to examine,</li>
+</ul>
+</li>
+<li>
+<p><strong>Ask your plot questions.</strong></p>
+<ul>
+<li>What questions <em>does</em> your plot answer? What questions are left <em>unanswered</em> by your plot?</li>
+<li>What <em>new</em> questions does your plot spark / inspire?</li>
+<li>Do you have the viz tools to answer these questions, or might you learn more?</li>
+</ul>
+</li>
+<li><p><strong>Focus.</strong><br>
+Reporting a large number of visualizations can overwhelm the audience and obscure your conclusions. Instead, pick out a focused yet comprehensive set of visualizations.</p></li>
+</ul>
+</div>
+</div>
+</section></section><section id="exercises-required" class="level2" data-number="14.3"><h2 data-number="14.3" class="anchored" data-anchor-id="exercises-required">
+<span class="header-section-number">14.3</span> Exercises (required)</h2>
+<section id="the-story" class="level3 unnumbered"><h3 class="unnumbered anchored" data-anchor-id="the-story">The story</h3>
+<p>Though far from a perfect assessment of academic preparedness, SAT scores have historically been used as one measurement of a state’s education system. The <code>education</code> dataset contains various education variables for each state:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a><span class="co"># Import and check out data</span></span>
+<span id="cb26-2"><a href="#cb26-2"></a>education <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"https://mac-stat.github.io/data/sat.csv"</span>)</span>
+<span id="cb26-3"><a href="#cb26-3"></a><span class="fu">head</span>(education)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>       State expend ratio salary frac verbal math  sat  fracCat
+1    Alabama  4.405  17.2 31.144    8    491  538 1029   (0,15]
+2     Alaska  8.963  17.6 47.951   47    445  489  934 (45,100]
+3    Arizona  4.778  19.3 32.175   27    448  496  944  (15,45]
+4   Arkansas  4.459  17.1 28.934    6    482  523 1005   (0,15]
+5 California  4.992  24.0 41.078   45    417  485  902  (15,45]
+6   Colorado  5.443  18.4 34.571   29    462  518  980  (15,45]</code></pre>
+</div>
+</div>
+<p>A codebook is provided by Danny Kaplan who also made these data accessible:</p>
+<p><img src="https://mac-stat.github.io/images/112/SATcodebook.png" class="img-fluid"></p>
+</section><section id="exercise-1-sat-scores" class="level3 unnumbered"><h3 class="unnumbered anchored" data-anchor-id="exercise-1-sat-scores">Exercise 1: SAT scores</h3>
+<section id="part-a" class="level4 unnumbered"><h4 class="unnumbered anchored" data-anchor-id="part-a">Part a</h4>
+<p>Construct a plot of how the average <code>sat</code> scores vary from state to state. (Just use 1 variable – <code>sat</code> not <code>State</code>!)</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a><span class="fu">ggplot</span>(education, <span class="fu">aes</span>(<span class="at">x =</span> sat)) <span class="sc">+</span></span>
+<span id="cb28-2"><a href="#cb28-2"></a>  <span class="fu">geom_density</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="ica-multi_files/figure-html/unnamed-chunk-20-1.png" class="img-fluid figure-img" width="408"></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section id="part-b" class="level4 unnumbered"><h4 class="unnumbered anchored" data-anchor-id="part-b">Part b</h4>
+<p>Summarize your observations from the plot. Comment on the basics: range, typical outcomes, shape. (Any theories about what might explain this non-normal shape?)</p>
+<blockquote class="blockquote">
+<p>The range seems to be from around 800 to 1100. The higher point is around 900 and then there is a decrease in bell shape form, this is the typical outcome. There is a second bell shaped curve between 1000 and 1100, therefore is bi-modal. This shape could be explained by the spending per pupil invested.</p>
+</blockquote>
+</section></section><section id="exercise-2-sat-scores-vs-per-pupil-spending-sat-scores-vs-salaries" class="level3 unnumbered"><h3 class="unnumbered anchored" data-anchor-id="exercise-2-sat-scores-vs-per-pupil-spending-sat-scores-vs-salaries">Exercise 2: SAT Scores vs Per Pupil Spending &amp; SAT Scores vs Salaries</h3>
+<p>The first question we’d like to answer is: Can the variability in <code>sat</code> scores from state to state be partially explained by how much a state spends on education, specifically its per pupil spending (<code>expend</code>) and typical teacher <code>salary</code>?</p>
+<section id="part-a-1" class="level4 unnumbered"><h4 class="unnumbered anchored" data-anchor-id="part-a-1">Part a</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a><span class="co"># Construct a plot of sat vs expend</span></span>
+<span id="cb29-2"><a href="#cb29-2"></a><span class="co"># Include a "best fit linear regression model" (HINT: method = "lm")</span></span>
+<span id="cb29-3"><a href="#cb29-3"></a><span class="fu">ggplot</span>(education, <span class="fu">aes</span>(<span class="at">y =</span> sat, <span class="at">x =</span> expend)) <span class="sc">+</span></span>
+<span id="cb29-4"><a href="#cb29-4"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb29-5"><a href="#cb29-5"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="ica-multi_files/figure-html/unnamed-chunk-21-1.png" class="img-fluid figure-img" width="408"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a><span class="co"># Construct a plot of sat vs salary</span></span>
+<span id="cb30-2"><a href="#cb30-2"></a><span class="co"># Include a "best fit linear regression model" (HINT: method = "lm")</span></span>
+<span id="cb30-3"><a href="#cb30-3"></a><span class="fu">ggplot</span>(education, <span class="fu">aes</span>(<span class="at">y =</span> sat, <span class="at">x =</span> salary)) <span class="sc">+</span></span>
+<span id="cb30-4"><a href="#cb30-4"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb30-5"><a href="#cb30-5"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="ica-multi_files/figure-html/unnamed-chunk-22-1.png" class="img-fluid figure-img" width="408"></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section id="part-b-1" class="level4 unnumbered"><h4 class="unnumbered anchored" data-anchor-id="part-b-1">Part b</h4>
+<p>What are the relationship trends between SAT scores and spending? Is there anything that surprises you?</p>
+</section></section><section id="exercise-3-sat-scores-vs-per-pupil-spending-and-teacher-salaries" class="level3 unnumbered"><h3 class="unnumbered anchored" data-anchor-id="exercise-3-sat-scores-vs-per-pupil-spending-and-teacher-salaries">Exercise 3: SAT Scores vs Per Pupil Spending <em>and</em> Teacher Salaries</h3>
+<p>Construct <em>one</em> visualization of the relationship of <code>sat</code> with <code>salary</code> <em>and</em> <code>expend</code>. HINT: Start with just 2 variables and tweak that code to add the third variable. Try out a few things!</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a><span class="fu">ggplot</span>(education, <span class="fu">aes</span>(<span class="at">y =</span> sat, <span class="at">x =</span> salary, <span class="at">color =</span> expend)) <span class="sc">+</span></span>
+<span id="cb31-2"><a href="#cb31-2"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb31-3"><a href="#cb31-3"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="ica-multi_files/figure-html/unnamed-chunk-23-1.png" class="img-fluid figure-img" width="408"></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section id="exercise-4-another-way-to-incorporate-scale" class="level3 unnumbered"><h3 class="unnumbered anchored" data-anchor-id="exercise-4-another-way-to-incorporate-scale">Exercise 4: Another way to Incorporate Scale</h3>
+<p>It can be tough to distinguish color scales and size scales for quantitative variables. Another option is to <em>discretize</em> a quantitative variable, or basically cut it up into <em>categories</em>.</p>
+<p>Construct the plot below. Check out the code and think about what’s happening here. What happens if you change “2” to “3”?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a><span class="fu">ggplot</span>(education, <span class="fu">aes</span>(<span class="at">y =</span> sat, <span class="at">x =</span> salary, <span class="at">color =</span> <span class="fu">cut</span>(expend, <span class="dv">4</span>))) <span class="sc">+</span> </span>
+<span id="cb32-2"><a href="#cb32-2"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
+<span id="cb32-3"><a href="#cb32-3"></a>  <span class="fu">geom_smooth</span>(<span class="at">se =</span> <span class="cn">FALSE</span>, <span class="at">method =</span> <span class="st">"lm"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Describe the trivariate relationship between <code>sat</code>, <code>salary</code>, and <code>expend</code>.</p>
+<blockquote class="blockquote">
+<p>States with lower expend per pupil and teacher’s salary seems to have a better perfomance in the SAT.</p>
+</blockquote>
+</section><section id="exercise-5-finally-an-explanation" class="level3 unnumbered"><h3 class="unnumbered anchored" data-anchor-id="exercise-5-finally-an-explanation">Exercise 5: Finally an Explanation</h3>
+<p>It’s strange that SAT scores <em>seem</em> to decrease with spending. But we’re leaving out an important variable from our analysis: the fraction of a state’s students that actually take the SAT. The <code>fracCat</code> variable indicates this fraction: <code>low</code> (under 15% take the SAT), <code>medium</code> (15-45% take the SAT), and <code>high</code> (at least 45% take the SAT).</p>
+<section id="part-a-2" class="level4 unnumbered"><h4 class="unnumbered anchored" data-anchor-id="part-a-2">Part a</h4>
+<p>Build a univariate viz of <code>fracCat</code> to better understand how many states fall into each category.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a><span class="fu">ggplot</span>(education, <span class="fu">aes</span>(<span class="at">x =</span> fracCat)) <span class="sc">+</span></span>
+<span id="cb33-2"><a href="#cb33-2"></a>  <span class="fu">geom_bar</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="ica-multi_files/figure-html/unnamed-chunk-25-1.png" class="img-fluid figure-img" width="408"></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section id="part-b-2" class="level4 unnumbered"><h4 class="unnumbered anchored" data-anchor-id="part-b-2">Part b</h4>
+<p>Build 2 bivariate visualizations that demonstrate the relationship between <code>sat</code> and <code>fracCat</code>. What story does your graphic tell and why does this make contextual sense?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a><span class="fu">ggplot</span>(education, <span class="fu">aes</span>(<span class="at">x =</span> sat, <span class="at">fill =</span> fracCat)) <span class="sc">+</span></span>
+<span id="cb34-2"><a href="#cb34-2"></a>  <span class="fu">geom_density</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb34-3"><a href="#cb34-3"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="ica-multi_files/figure-html/unnamed-chunk-26-1.png" class="img-fluid figure-img" width="408"></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section id="part-c" class="level4 unnumbered"><h4 class="unnumbered anchored" data-anchor-id="part-c">Part c</h4>
+<p>Make a trivariate visualization that demonstrates the relationship of <code>sat</code> with <code>expend</code> AND <code>fracCat</code>. Highlight the differences in <code>fracCat</code> groups through color AND unique trend lines. What story does your graphic tell?<br>
+Does it still seem that SAT scores decrease as spending increases?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a><span class="fu">ggplot</span>(education, <span class="fu">aes</span>(<span class="at">y =</span> sat, <span class="at">x =</span> expend, <span class="at">color =</span> fracCat)) <span class="sc">+</span></span>
+<span id="cb35-2"><a href="#cb35-2"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb35-3"><a href="#cb35-3"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="ica-multi_files/figure-html/unnamed-chunk-27-1.png" class="img-fluid figure-img" width="408"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>List of 136
+ $ line                            :List of 6
+  ..$ colour       : chr "black"
+  ..$ linewidth    : num 0.5
+  ..$ linetype     : num 1
+  ..$ lineend      : chr "butt"
+  ..$ arrow        : logi FALSE
+  ..$ inherit.blank: logi TRUE
+  ..- attr(*, "class")= chr [1:2] "element_line" "element"
+ $ rect                            :List of 5
+  ..$ fill         : chr "white"
+  ..$ colour       : chr "black"
+  ..$ linewidth    : num 0.5
+  ..$ linetype     : num 1
+  ..$ inherit.blank: logi TRUE
+  ..- attr(*, "class")= chr [1:2] "element_rect" "element"
+ $ text                            :List of 11
+  ..$ family       : chr ""
+  ..$ face         : chr "plain"
+  ..$ colour       : chr "black"
+  ..$ size         : num 11
+  ..$ hjust        : num 0.5
+  ..$ vjust        : num 0.5
+  ..$ angle        : num 0
+  ..$ lineheight   : num 0.9
+  ..$ margin       : 'margin' num [1:4] 0points 0points 0points 0points
+  .. ..- attr(*, "unit")= int 8
+  ..$ debug        : logi FALSE
+  ..$ inherit.blank: logi TRUE
+  ..- attr(*, "class")= chr [1:2] "element_text" "element"
+ $ title                           : NULL
+ $ aspect.ratio                    : NULL
+ $ axis.title                      : NULL
+ $ axis.title.x                    :List of 11
+  ..$ family       : NULL
+  ..$ face         : NULL
+  ..$ colour       : NULL
+  ..$ size         : NULL
+  ..$ hjust        : NULL
+  ..$ vjust        : num 1
+  ..$ angle        : NULL
+  ..$ lineheight   : NULL
+  ..$ margin       : 'margin' num [1:4] 2.75points 0points 0points 0points
+  .. ..- attr(*, "unit")= int 8
+  ..$ debug        : NULL
+  ..$ inherit.blank: logi TRUE
+  ..- attr(*, "class")= chr [1:2] "element_text" "element"
+ $ axis.title.x.top                :List of 11
+  ..$ family       : NULL
+  ..$ face         : NULL
+  ..$ colour       : NULL
+  ..$ size         : NULL
+  ..$ hjust        : NULL
+  ..$ vjust        : num 0
+  ..$ angle        : NULL
+  ..$ lineheight   : NULL
+  ..$ margin       : 'margin' num [1:4] 0points 0points 2.75points 0points
+  .. ..- attr(*, "unit")= int 8
+  ..$ debug        : NULL
+  ..$ inherit.blank: logi TRUE
+  ..- attr(*, "class")= chr [1:2] "element_text" "element"
+ $ axis.title.x.bottom             : NULL
+ $ axis.title.y                    :List of 11
+  ..$ family       : NULL
+  ..$ face         : NULL
+  ..$ colour       : NULL
+  ..$ size         : NULL
+  ..$ hjust        : NULL
+  ..$ vjust        : num 1
+  ..$ angle        : num 90
+  ..$ lineheight   : NULL
+  ..$ margin       : 'margin' num [1:4] 0points 2.75points 0points 0points
+  .. ..- attr(*, "unit")= int 8
+  ..$ debug        : NULL
+  ..$ inherit.blank: logi TRUE
+  ..- attr(*, "class")= chr [1:2] "element_text" "element"
+ $ axis.title.y.left               : NULL
+ $ axis.title.y.right              :List of 11
+  ..$ family       : NULL
+  ..$ face         : NULL
+  ..$ colour       : NULL
+  ..$ size         : NULL
+  ..$ hjust        : NULL
+  ..$ vjust        : num 1
+  ..$ angle        : num -90
+  ..$ lineheight   : NULL
+  ..$ margin       : 'margin' num [1:4] 0points 0points 0points 2.75points
+  .. ..- attr(*, "unit")= int 8
+  ..$ debug        : NULL
+  ..$ inherit.blank: logi TRUE
+  ..- attr(*, "class")= chr [1:2] "element_text" "element"
+ $ axis.text                       :List of 11
+  ..$ family       : NULL
+  ..$ face         : NULL
+  ..$ colour       : chr "grey30"
+  ..$ size         : 'rel' num 0.8
+  ..$ hjust        : NULL
+  ..$ vjust        : NULL
+  ..$ angle        : NULL
+  ..$ lineheight   : NULL
+  ..$ margin       : NULL
+  ..$ debug        : NULL
+  ..$ inherit.blank: logi TRUE
+  ..- attr(*, "class")= chr [1:2] "element_text" "element"
+ $ axis.text.x                     :List of 11
+  ..$ family       : NULL
+  ..$ face         : NULL
+  ..$ colour       : NULL
+  ..$ size         : NULL
+  ..$ hjust        : NULL
+  ..$ vjust        : num 1
+  ..$ angle        : NULL
+  ..$ lineheight   : NULL
+  ..$ margin       : 'margin' num [1:4] 2.2points 0points 0points 0points
+  .. ..- attr(*, "unit")= int 8
+  ..$ debug        : NULL
+  ..$ inherit.blank: logi TRUE
+  ..- attr(*, "class")= chr [1:2] "element_text" "element"
+ $ axis.text.x.top                 :List of 11
+  ..$ family       : NULL
+  ..$ face         : NULL
+  ..$ colour       : NULL
+  ..$ size         : NULL
+  ..$ hjust        : NULL
+  ..$ vjust        : num 0
+  ..$ angle        : NULL
+  ..$ lineheight   : NULL
+  ..$ margin       : 'margin' num [1:4] 0points 0points 2.2points 0points
+  .. ..- attr(*, "unit")= int 8
+  ..$ debug        : NULL
+  ..$ inherit.blank: logi TRUE
+  ..- attr(*, "class")= chr [1:2] "element_text" "element"
+ $ axis.text.x.bottom              : NULL
+ $ axis.text.y                     :List of 11
+  ..$ family       : NULL
+  ..$ face         : NULL
+  ..$ colour       : NULL
+  ..$ size         : NULL
+  ..$ hjust        : num 1
+  ..$ vjust        : NULL
+  ..$ angle        : NULL
+  ..$ lineheight   : NULL
+  ..$ margin       : 'margin' num [1:4] 0points 2.2points 0points 0points
+  .. ..- attr(*, "unit")= int 8
+  ..$ debug        : NULL
+  ..$ inherit.blank: logi TRUE
+  ..- attr(*, "class")= chr [1:2] "element_text" "element"
+ $ axis.text.y.left                : NULL
+ $ axis.text.y.right               :List of 11
+  ..$ family       : NULL
+  ..$ face         : NULL
+  ..$ colour       : NULL
+  ..$ size         : NULL
+  ..$ hjust        : num 0
+  ..$ vjust        : NULL
+  ..$ angle        : NULL
+  ..$ lineheight   : NULL
+  ..$ margin       : 'margin' num [1:4] 0points 0points 0points 2.2points
+  .. ..- attr(*, "unit")= int 8
+  ..$ debug        : NULL
+  ..$ inherit.blank: logi TRUE
+  ..- attr(*, "class")= chr [1:2] "element_text" "element"
+ $ axis.text.theta                 : NULL
+ $ axis.text.r                     :List of 11
+  ..$ family       : NULL
+  ..$ face         : NULL
+  ..$ colour       : NULL
+  ..$ size         : NULL
+  ..$ hjust        : num 0.5
+  ..$ vjust        : NULL
+  ..$ angle        : NULL
+  ..$ lineheight   : NULL
+  ..$ margin       : 'margin' num [1:4] 0points 2.2points 0points 2.2points
+  .. ..- attr(*, "unit")= int 8
+  ..$ debug        : NULL
+  ..$ inherit.blank: logi TRUE
+  ..- attr(*, "class")= chr [1:2] "element_text" "element"
+ $ axis.ticks                      : list()
+  ..- attr(*, "class")= chr [1:2] "element_blank" "element"
+ $ axis.ticks.x                    : NULL
+ $ axis.ticks.x.top                : NULL
+ $ axis.ticks.x.bottom             : NULL
+ $ axis.ticks.y                    : NULL
+ $ axis.ticks.y.left               : NULL
+ $ axis.ticks.y.right              : NULL
+ $ axis.ticks.theta                : NULL
+ $ axis.ticks.r                    : NULL
+ $ axis.minor.ticks.x.top          : NULL
+ $ axis.minor.ticks.x.bottom       : NULL
+ $ axis.minor.ticks.y.left         : NULL
+ $ axis.minor.ticks.y.right        : NULL
+ $ axis.minor.ticks.theta          : NULL
+ $ axis.minor.ticks.r              : NULL
+ $ axis.ticks.length               : 'simpleUnit' num 2.75points
+  ..- attr(*, "unit")= int 8
+ $ axis.ticks.length.x             : NULL
+ $ axis.ticks.length.x.top         : NULL
+ $ axis.ticks.length.x.bottom      : NULL
+ $ axis.ticks.length.y             : NULL
+ $ axis.ticks.length.y.left        : NULL
+ $ axis.ticks.length.y.right       : NULL
+ $ axis.ticks.length.theta         : NULL
+ $ axis.ticks.length.r             : NULL
+ $ axis.minor.ticks.length         : 'rel' num 0.75
+ $ axis.minor.ticks.length.x       : NULL
+ $ axis.minor.ticks.length.x.top   : NULL
+ $ axis.minor.ticks.length.x.bottom: NULL
+ $ axis.minor.ticks.length.y       : NULL
+ $ axis.minor.ticks.length.y.left  : NULL
+ $ axis.minor.ticks.length.y.right : NULL
+ $ axis.minor.ticks.length.theta   : NULL
+ $ axis.minor.ticks.length.r       : NULL
+ $ axis.line                       : list()
+  ..- attr(*, "class")= chr [1:2] "element_blank" "element"
+ $ axis.line.x                     : NULL
+ $ axis.line.x.top                 : NULL
+ $ axis.line.x.bottom              : NULL
+ $ axis.line.y                     : NULL
+ $ axis.line.y.left                : NULL
+ $ axis.line.y.right               : NULL
+ $ axis.line.theta                 : NULL
+ $ axis.line.r                     : NULL
+ $ legend.background               : list()
+  ..- attr(*, "class")= chr [1:2] "element_blank" "element"
+ $ legend.margin                   : 'margin' num [1:4] 5.5points 5.5points 5.5points 5.5points
+  ..- attr(*, "unit")= int 8
+ $ legend.spacing                  : 'simpleUnit' num 11points
+  ..- attr(*, "unit")= int 8
+ $ legend.spacing.x                : NULL
+ $ legend.spacing.y                : NULL
+ $ legend.key                      : list()
+  ..- attr(*, "class")= chr [1:2] "element_blank" "element"
+ $ legend.key.size                 : 'simpleUnit' num 1.2lines
+  ..- attr(*, "unit")= int 3
+ $ legend.key.height               : NULL
+ $ legend.key.width                : NULL
+ $ legend.key.spacing              : 'simpleUnit' num 5.5points
+  ..- attr(*, "unit")= int 8
+ $ legend.key.spacing.x            : NULL
+ $ legend.key.spacing.y            : NULL
+ $ legend.frame                    : NULL
+ $ legend.ticks                    : NULL
+ $ legend.ticks.length             : 'rel' num 0.2
+ $ legend.axis.line                : NULL
+ $ legend.text                     :List of 11
+  ..$ family       : NULL
+  ..$ face         : NULL
+  ..$ colour       : NULL
+  ..$ size         : 'rel' num 0.8
+  ..$ hjust        : NULL
+  ..$ vjust        : NULL
+  ..$ angle        : NULL
+  ..$ lineheight   : NULL
+  ..$ margin       : NULL
+  ..$ debug        : NULL
+  ..$ inherit.blank: logi TRUE
+  ..- attr(*, "class")= chr [1:2] "element_text" "element"
+ $ legend.text.position            : NULL
+ $ legend.title                    :List of 11
+  ..$ family       : NULL
+  ..$ face         : NULL
+  ..$ colour       : NULL
+  ..$ size         : NULL
+  ..$ hjust        : num 0
+  ..$ vjust        : NULL
+  ..$ angle        : NULL
+  ..$ lineheight   : NULL
+  ..$ margin       : NULL
+  ..$ debug        : NULL
+  ..$ inherit.blank: logi TRUE
+  ..- attr(*, "class")= chr [1:2] "element_text" "element"
+ $ legend.title.position           : NULL
+ $ legend.position                 : chr "right"
+ $ legend.position.inside          : NULL
+ $ legend.direction                : NULL
+ $ legend.byrow                    : NULL
+ $ legend.justification            : chr "center"
+ $ legend.justification.top        : NULL
+ $ legend.justification.bottom     : NULL
+ $ legend.justification.left       : NULL
+ $ legend.justification.right      : NULL
+ $ legend.justification.inside     : NULL
+ $ legend.location                 : NULL
+ $ legend.box                      : NULL
+ $ legend.box.just                 : NULL
+ $ legend.box.margin               : 'margin' num [1:4] 0cm 0cm 0cm 0cm
+  ..- attr(*, "unit")= int 1
+ $ legend.box.background           : list()
+  ..- attr(*, "class")= chr [1:2] "element_blank" "element"
+ $ legend.box.spacing              : 'simpleUnit' num 11points
+  ..- attr(*, "unit")= int 8
+  [list output truncated]
+ - attr(*, "class")= chr [1:2] "theme" "gg"
+ - attr(*, "complete")= logi TRUE
+ - attr(*, "validate")= logi TRUE</code></pre>
+</div>
+</div>
+</section><section id="part-d" class="level4 unnumbered"><h4 class="unnumbered anchored" data-anchor-id="part-d">Part d</h4>
+<p>Putting all of this together, explain this example of <strong>Simpson’s Paradox</strong>. That is, why did it appear that SAT scores decrease as spending increases even though the <em>opposite</em> is true?</p>
+<blockquote class="blockquote">
+<p>States with lower spending seems to have higher scores because the students who choose to take the SAT are lower than in other states.</p>
+</blockquote>
+</section></section></section><section id="exercises-optional" class="level2" data-number="14.4"><h2 data-number="14.4" class="anchored" data-anchor-id="exercises-optional">
+<span class="header-section-number">14.4</span> Exercises (optional)</h2>
+<section id="exercise-6-heat-maps" class="level3 unnumbered"><h3 class="unnumbered anchored" data-anchor-id="exercise-6-heat-maps">Exercise 6: Heat Maps</h3>
+<p>As usual, we’ve only just scratched the surface! There are lots of other data viz techniques for exploring multivariate relationships. Let’s start with a <strong>heat map</strong>.</p>
+<section id="part-a-3" class="level4 unnumbered"><h4 class="unnumbered anchored" data-anchor-id="part-a-3">Part a</h4>
+<p>Run the chunks below. Check out the code, but don’t worry about every little detail! NOTES:</p>
+<ul>
+<li>This is <em>not</em> part of the <code>ggplot()</code> grammar, making it a bit complicated.</li>
+<li>If you’re curious about what a line in the plot does, comment it out (<code>#</code>) and check out what happens!</li>
+<li>In the plot, for each state (row), each variable (column) is scaled to indicate whether the state has a relative high value (yellow), a relatively low value (purple), or something in between (blues/greens).</li>
+<li>You can also play with the color scheme. Type <code><a href="https://rdrr.io/r/grDevices/palettes.html">?cm.colors</a></code> in the <em>console</em> to learn about various options.</li>
+<li>We’ll improve the plot later, so don’t spend too much time trying to learn something from this plot.</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1"></a><span class="co"># Remove the "State" column and use it to label the rows</span></span>
+<span id="cb38-2"><a href="#cb38-2"></a><span class="co"># Then scale the variables</span></span>
+<span id="cb38-3"><a href="#cb38-3"></a>plot_data <span class="ot">&lt;-</span> education <span class="sc">|&gt;</span> </span>
+<span id="cb38-4"><a href="#cb38-4"></a>  <span class="fu">column_to_rownames</span>(<span class="st">"State"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb38-5"><a href="#cb38-5"></a>  <span class="fu">data.matrix</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb38-6"><a href="#cb38-6"></a>  <span class="fu">scale</span>()</span>
+<span id="cb38-7"><a href="#cb38-7"></a></span>
+<span id="cb38-8"><a href="#cb38-8"></a><span class="co"># Load the gplots package needed for heatmaps</span></span>
+<span id="cb38-9"><a href="#cb38-9"></a><span class="fu">library</span>(gplots)</span>
+<span id="cb38-10"><a href="#cb38-10"></a></span>
+<span id="cb38-11"><a href="#cb38-11"></a><span class="co"># Construct heatmap 1</span></span>
+<span id="cb38-12"><a href="#cb38-12"></a><span class="fu">heatmap.2</span>(plot_data,</span>
+<span id="cb38-13"><a href="#cb38-13"></a>  <span class="at">dendrogram =</span> <span class="st">"none"</span>,</span>
+<span id="cb38-14"><a href="#cb38-14"></a>  <span class="at">Rowv =</span> <span class="cn">NA</span>, </span>
+<span id="cb38-15"><a href="#cb38-15"></a>  <span class="at">scale =</span> <span class="st">"column"</span>,</span>
+<span id="cb38-16"><a href="#cb38-16"></a>  <span class="at">keysize =</span> <span class="fl">0.7</span>, </span>
+<span id="cb38-17"><a href="#cb38-17"></a>  <span class="at">density.info =</span> <span class="st">"none"</span>,</span>
+<span id="cb38-18"><a href="#cb38-18"></a>  <span class="at">col =</span> <span class="fu">hcl.colors</span>(<span class="dv">256</span>), </span>
+<span id="cb38-19"><a href="#cb38-19"></a>  <span class="at">margins =</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">20</span>),</span>
+<span id="cb38-20"><a href="#cb38-20"></a>  <span class="at">colsep =</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">7</span>), <span class="at">rowsep =</span> (<span class="dv">1</span><span class="sc">:</span><span class="dv">50</span>), <span class="at">sepwidth =</span> <span class="fu">c</span>(<span class="fl">0.05</span>, <span class="fl">0.05</span>),</span>
+<span id="cb38-21"><a href="#cb38-21"></a>  <span class="at">sepcolor =</span> <span class="st">"white"</span>, <span class="at">trace =</span> <span class="st">"none"</span></span>
+<span id="cb38-22"><a href="#cb38-22"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1"></a><span class="co"># Construct heatmap 2</span></span>
+<span id="cb39-2"><a href="#cb39-2"></a><span class="fu">heatmap.2</span>(plot_data,</span>
+<span id="cb39-3"><a href="#cb39-3"></a>  <span class="at">dendrogram =</span> <span class="st">"none"</span>,</span>
+<span id="cb39-4"><a href="#cb39-4"></a>  <span class="at">Rowv =</span> <span class="cn">TRUE</span>,             <span class="do">### WE CHANGED THIS FROM NA TO TRUE</span></span>
+<span id="cb39-5"><a href="#cb39-5"></a>  <span class="at">scale =</span> <span class="st">"column"</span>,</span>
+<span id="cb39-6"><a href="#cb39-6"></a>  <span class="at">keysize =</span> <span class="fl">0.7</span>, </span>
+<span id="cb39-7"><a href="#cb39-7"></a>  <span class="at">density.info =</span> <span class="st">"none"</span>,</span>
+<span id="cb39-8"><a href="#cb39-8"></a>  <span class="at">col =</span> <span class="fu">hcl.colors</span>(<span class="dv">256</span>), </span>
+<span id="cb39-9"><a href="#cb39-9"></a>  <span class="at">margins =</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">20</span>),</span>
+<span id="cb39-10"><a href="#cb39-10"></a>  <span class="at">colsep =</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">7</span>), <span class="at">rowsep =</span> (<span class="dv">1</span><span class="sc">:</span><span class="dv">50</span>), <span class="at">sepwidth =</span> <span class="fu">c</span>(<span class="fl">0.05</span>, <span class="fl">0.05</span>),</span>
+<span id="cb39-11"><a href="#cb39-11"></a>  <span class="at">sepcolor =</span> <span class="st">"white"</span>, <span class="at">trace =</span> <span class="st">"none"</span></span>
+<span id="cb39-12"><a href="#cb39-12"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1"></a><span class="co"># Construct heatmap 3</span></span>
+<span id="cb40-2"><a href="#cb40-2"></a><span class="fu">heatmap.2</span>(plot_data,</span>
+<span id="cb40-3"><a href="#cb40-3"></a>  <span class="at">dendrogram =</span> <span class="st">"row"</span>,       <span class="do">### WE CHANGED THIS FROM "none" TO "row"</span></span>
+<span id="cb40-4"><a href="#cb40-4"></a>  <span class="at">Rowv =</span> <span class="cn">TRUE</span>,            </span>
+<span id="cb40-5"><a href="#cb40-5"></a>  <span class="at">scale =</span> <span class="st">"column"</span>,</span>
+<span id="cb40-6"><a href="#cb40-6"></a>  <span class="at">keysize =</span> <span class="fl">0.7</span>, </span>
+<span id="cb40-7"><a href="#cb40-7"></a>  <span class="at">density.info =</span> <span class="st">"none"</span>,</span>
+<span id="cb40-8"><a href="#cb40-8"></a>  <span class="at">col =</span> <span class="fu">hcl.colors</span>(<span class="dv">256</span>), </span>
+<span id="cb40-9"><a href="#cb40-9"></a>  <span class="at">margins =</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">20</span>),</span>
+<span id="cb40-10"><a href="#cb40-10"></a>  <span class="at">colsep =</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">7</span>), <span class="at">rowsep =</span> (<span class="dv">1</span><span class="sc">:</span><span class="dv">50</span>), <span class="at">sepwidth =</span> <span class="fu">c</span>(<span class="fl">0.05</span>, <span class="fl">0.05</span>),</span>
+<span id="cb40-11"><a href="#cb40-11"></a>  <span class="at">sepcolor =</span> <span class="st">"white"</span>, <span class="at">trace =</span> <span class="st">"none"</span></span>
+<span id="cb40-12"><a href="#cb40-12"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section><section id="part-b-3" class="level4 unnumbered"><h4 class="unnumbered anchored" data-anchor-id="part-b-3">Part b</h4>
+<p>In the final two plots, the states (rows) are rearranged by similarity with respect to these education metrics. The <em>final</em> plot includes a <strong>dendrogram</strong> which further indicates <em>clusters</em> of similar states. In short, states that have a shorter path to connection are more similar than others.</p>
+<p>Putting this all together, what insight do you gain about the education trends across U.S. states? Which states are similar? In what ways are they similar? Are there any outliers with respect to 1 or more of the education metrics?</p>
+</section></section><section id="exercise-7-star-plots" class="level3 unnumbered"><h3 class="unnumbered anchored" data-anchor-id="exercise-7-star-plots">Exercise 7: Star plots</h3>
+<p>Like heat maps, star plots indicate the relative scale of each variable for each state. Thus, we can use star maps to identify similar groups of states, and unusual states!</p>
+<section id="part-a-4" class="level4 unnumbered"><h4 class="unnumbered anchored" data-anchor-id="part-a-4">Part a</h4>
+<p>Construct and check out the star plot below. Note that each state has a “pie”, with each segment corresponding to a different variable. The larger a segment, the larger that variable’s value is in that state. For example:</p>
+<ul>
+<li>Check out Minnesota. How does Minnesota’s education metrics compare to those in other states? What metrics are relatively high? Relatively low?</li>
+<li>What states appear to be similar? Do these observations agree with those that you gained from the heat map?</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1"></a><span class="fu">stars</span>(plot_data,</span>
+<span id="cb41-2"><a href="#cb41-2"></a>  <span class="at">flip.labels =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb41-3"><a href="#cb41-3"></a>  <span class="at">key.loc =</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="fl">1.5</span>),</span>
+<span id="cb41-4"><a href="#cb41-4"></a>  <span class="at">cex =</span> <span class="dv">1</span>, </span>
+<span id="cb41-5"><a href="#cb41-5"></a>  <span class="at">draw.segments =</span> <span class="cn">TRUE</span></span>
+<span id="cb41-6"><a href="#cb41-6"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section><section id="part-b-4" class="level4 unnumbered"><h4 class="unnumbered anchored" data-anchor-id="part-b-4">Part b</h4>
+<p>Finally, let’s plot the state stars by <em>geographic</em> location! What new insight do you gain here?!</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1"></a><span class="fu">stars</span>(plot_data,</span>
+<span id="cb42-2"><a href="#cb42-2"></a>  <span class="at">flip.labels =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb42-3"><a href="#cb42-3"></a>  <span class="at">locations =</span> <span class="fu">data.matrix</span>(<span class="fu">as.data.frame</span>(state.center)),  <span class="co"># added external data to arrange by geo location</span></span>
+<span id="cb42-4"><a href="#cb42-4"></a>  <span class="at">key.loc =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">110</span>, <span class="dv">28</span>),</span>
+<span id="cb42-5"><a href="#cb42-5"></a>  <span class="at">cex =</span> <span class="dv">1</span>, </span>
+<span id="cb42-6"><a href="#cb42-6"></a>  <span class="at">draw.segments =</span> <span class="cn">TRUE</span></span>
+<span id="cb42-7"><a href="#cb42-7"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 
 
 <!-- -->
 
-
-</main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
+</section></section></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -888,27 +1898,537 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
+</script><nav class="page-navigation"><div class="nav-page nav-page-previous">
       <a href="../ica/ica-bi.html" class="pagination-link" aria-label="Bivariate Viz">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Bivariate Viz</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Bivariate Viz</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="../ica/ica-spatial.html" class="pagination-link" aria-label="Spatial Viz">
-        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Spatial Viz</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Spatial Viz</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1"></a><span class="co">---</span></span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="an">title:</span><span class="co"> "Mulivariate Viz"</span></span>
-<span id="cb1-3"><a href="#cb1-3"></a><span class="co">---</span></span>
-<span id="cb1-4"><a href="#cb1-4"></a></span>
-<span id="cb1-5"><a href="#cb1-5"></a>Use this file for practice with the **mulivariate viz** in-class activity.  Refer to the class website for details.</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb43" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb43-1"><a href="#cb43-1"></a><span class="co">---</span></span>
+<span id="cb43-2"><a href="#cb43-2"></a><span class="an">title:</span><span class="co"> "Multivariate Viz"</span></span>
+<span id="cb43-3"><a href="#cb43-3"></a><span class="an">number-sections:</span><span class="co"> true</span></span>
+<span id="cb43-4"><a href="#cb43-4"></a><span class="an">execute:</span><span class="co"> </span></span>
+<span id="cb43-5"><a href="#cb43-5"></a><span class="co">  warning: false</span></span>
+<span id="cb43-6"><a href="#cb43-6"></a><span class="an">fig-height:</span><span class="co"> 2.75</span></span>
+<span id="cb43-7"><a href="#cb43-7"></a><span class="an">fig-width:</span><span class="co"> 4.25</span></span>
+<span id="cb43-8"><a href="#cb43-8"></a><span class="an">fig-env:</span><span class="co"> 'figure'</span></span>
+<span id="cb43-9"><a href="#cb43-9"></a><span class="an">fig-pos:</span><span class="co"> 'h'</span></span>
+<span id="cb43-10"><a href="#cb43-10"></a><span class="an">fig-align:</span><span class="co"> center</span></span>
+<span id="cb43-11"><a href="#cb43-11"></a><span class="an">code-fold:</span><span class="co"> false</span></span>
+<span id="cb43-12"><a href="#cb43-12"></a><span class="co">---</span></span>
+<span id="cb43-13"><a href="#cb43-13"></a></span>
+<span id="cb43-14"><a href="#cb43-14"></a><span class="fu">## Review</span></span>
+<span id="cb43-15"><a href="#cb43-15"></a></span>
+<span id="cb43-16"><a href="#cb43-16"></a>Let's review some *univariate* and *bivariate* plotting concepts using some daily weather data from Australia. This is a subset of the data from the <span class="in">`weatherAUS`</span> data in the <span class="in">`rattle`</span> package.</span>
+<span id="cb43-17"><a href="#cb43-17"></a></span>
+<span id="cb43-20"><a href="#cb43-20"></a><span class="in">```{r}</span></span>
+<span id="cb43-21"><a href="#cb43-21"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb43-22"><a href="#cb43-22"></a></span>
+<span id="cb43-23"><a href="#cb43-23"></a><span class="co"># Import data</span></span>
+<span id="cb43-24"><a href="#cb43-24"></a>weather <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"https://mac-stat.github.io/data/weather_3_locations.csv"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb43-25"><a href="#cb43-25"></a>  <span class="fu">mutate</span>(<span class="at">date =</span> <span class="fu">as.Date</span>(date))  </span>
+<span id="cb43-26"><a href="#cb43-26"></a></span>
+<span id="cb43-27"><a href="#cb43-27"></a><span class="co"># Check out the first 6 rows</span></span>
+<span id="cb43-28"><a href="#cb43-28"></a><span class="fu">head</span>(weather)</span>
+<span id="cb43-29"><a href="#cb43-29"></a></span>
+<span id="cb43-30"><a href="#cb43-30"></a><span class="co"># What are the units of observation?</span></span>
+<span id="cb43-31"><a href="#cb43-31"></a><span class="fu">colnames</span>(weather)</span>
+<span id="cb43-32"><a href="#cb43-32"></a></span>
+<span id="cb43-33"><a href="#cb43-33"></a><span class="co"># How many data points do we have? </span></span>
+<span id="cb43-34"><a href="#cb43-34"></a><span class="fu">nrow</span>(weather)</span>
+<span id="cb43-35"><a href="#cb43-35"></a></span>
+<span id="cb43-36"><a href="#cb43-36"></a><span class="co"># What type of variables do we have?</span></span>
+<span id="cb43-37"><a href="#cb43-37"></a><span class="fu">str</span>(weather)</span>
+<span id="cb43-38"><a href="#cb43-38"></a><span class="in">```</span></span>
+<span id="cb43-39"><a href="#cb43-39"></a></span>
+<span id="cb43-40"><a href="#cb43-40"></a></span>
+<span id="cb43-41"><a href="#cb43-41"></a></span>
+<span id="cb43-42"><a href="#cb43-42"></a><span class="fu">### Example 1 {-}</span></span>
+<span id="cb43-43"><a href="#cb43-43"></a></span>
+<span id="cb43-44"><a href="#cb43-44"></a>Construct a plot that allows us to examine how <span class="in">`temp3pm`</span> varies.</span>
+<span id="cb43-45"><a href="#cb43-45"></a></span>
+<span id="cb43-48"><a href="#cb43-48"></a><span class="in">```{r}</span></span>
+<span id="cb43-49"><a href="#cb43-49"></a><span class="fu">ggplot</span>(weather, <span class="fu">aes</span>(<span class="at">x =</span> temp3pm))<span class="sc">+</span></span>
+<span id="cb43-50"><a href="#cb43-50"></a>  <span class="fu">geom_density</span>()</span>
+<span id="cb43-51"><a href="#cb43-51"></a><span class="in">```</span></span>
+<span id="cb43-52"><a href="#cb43-52"></a></span>
+<span id="cb43-53"><a href="#cb43-53"></a></span>
+<span id="cb43-54"><a href="#cb43-54"></a><span class="fu">### Example 2 {-}</span></span>
+<span id="cb43-55"><a href="#cb43-55"></a></span>
+<span id="cb43-56"><a href="#cb43-56"></a>Construct 3 plots that address the following research question:</span>
+<span id="cb43-57"><a href="#cb43-57"></a></span>
+<span id="cb43-58"><a href="#cb43-58"></a>How do afternoon temperatures (<span class="in">`temp3pm`</span>) differ by <span class="in">`location`</span>?</span>
+<span id="cb43-59"><a href="#cb43-59"></a></span>
+<span id="cb43-62"><a href="#cb43-62"></a><span class="in">```{r}</span></span>
+<span id="cb43-63"><a href="#cb43-63"></a><span class="co"># Plot 1 (no facets &amp; starting from a density plot of temp3pm)</span></span>
+<span id="cb43-64"><a href="#cb43-64"></a><span class="fu">ggplot</span>(weather, <span class="fu">aes</span>(<span class="at">x =</span> temp3pm)) <span class="sc">+</span> </span>
+<span id="cb43-65"><a href="#cb43-65"></a>  <span class="fu">geom_density</span>()</span>
+<span id="cb43-66"><a href="#cb43-66"></a><span class="in">```</span></span>
+<span id="cb43-67"><a href="#cb43-67"></a></span>
+<span id="cb43-70"><a href="#cb43-70"></a><span class="in">```{r}</span></span>
+<span id="cb43-71"><a href="#cb43-71"></a><span class="co"># Plot 2 (no facets or densities)</span></span>
+<span id="cb43-72"><a href="#cb43-72"></a><span class="fu">ggplot</span>(weather, <span class="fu">aes</span>(<span class="at">x =</span> temp3pm)) <span class="sc">+</span> </span>
+<span id="cb43-73"><a href="#cb43-73"></a>  <span class="fu">geom_histogram</span>()</span>
+<span id="cb43-74"><a href="#cb43-74"></a><span class="in">```</span></span>
+<span id="cb43-75"><a href="#cb43-75"></a></span>
+<span id="cb43-78"><a href="#cb43-78"></a><span class="in">```{r}</span></span>
+<span id="cb43-79"><a href="#cb43-79"></a><span class="co"># Plot 3 (facets)</span></span>
+<span id="cb43-80"><a href="#cb43-80"></a><span class="fu">ggplot</span>(weather, <span class="fu">aes</span>(<span class="at">x =</span> temp3pm)) <span class="sc">+</span> </span>
+<span id="cb43-81"><a href="#cb43-81"></a>  <span class="fu">geom_density</span>() <span class="sc">+</span></span>
+<span id="cb43-82"><a href="#cb43-82"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>location)</span>
+<span id="cb43-83"><a href="#cb43-83"></a><span class="in">```</span></span>
+<span id="cb43-84"><a href="#cb43-84"></a></span>
+<span id="cb43-85"><a href="#cb43-85"></a></span>
+<span id="cb43-86"><a href="#cb43-86"></a></span>
+<span id="cb43-87"><a href="#cb43-87"></a><span class="fu">#### Reflection {-}</span></span>
+<span id="cb43-88"><a href="#cb43-88"></a></span>
+<span id="cb43-89"><a href="#cb43-89"></a><span class="ss">-   </span>Temperatures tend to be highest, and most variable, in Uluru. There, they range from \~10 to \~45 with a typical temp around \~30 degrees.</span>
+<span id="cb43-90"><a href="#cb43-90"></a><span class="ss">-   </span>Temperatures tend to be lowest in Hobart. There, they range from \~5 to \~45 with a typical temp around \~15 degrees.</span>
+<span id="cb43-91"><a href="#cb43-91"></a><span class="ss">-   </span>Wollongong temps are in between and are the least variable from day to day.</span>
+<span id="cb43-92"><a href="#cb43-92"></a></span>
+<span id="cb43-93"><a href="#cb43-93"></a></span>
+<span id="cb43-94"><a href="#cb43-94"></a>**SUBTLETIES: Defining `fill` or `color` by a variable**</span>
+<span id="cb43-95"><a href="#cb43-95"></a></span>
+<span id="cb43-96"><a href="#cb43-96"></a>How we define the <span class="in">`fill`</span> or <span class="in">`color`</span> depends upon whether we're defining it by a named color or by some variable in our dataset. For example:</span>
+<span id="cb43-97"><a href="#cb43-97"></a></span>
+<span id="cb43-98"><a href="#cb43-98"></a><span class="ss">-   </span><span class="in">`geom___(fill = "blue")`</span> \</span>
+<span id="cb43-99"><a href="#cb43-99"></a>    *named* colors are defined outside the <span class="in">`aes`</span>thetics and put in quotes</span>
+<span id="cb43-100"><a href="#cb43-100"></a></span>
+<span id="cb43-101"><a href="#cb43-101"></a><span class="ss">-   </span><span class="in">`geom___(aes(fill = variable))`</span> or <span class="in">`ggplot(___, aes(fill = variable))`</span> \</span>
+<span id="cb43-102"><a href="#cb43-102"></a>colors/fills defined by a *variable* are defined inside the <span class="in">`aes`</span>thetics</span>
+<span id="cb43-103"><a href="#cb43-103"></a></span>
+<span id="cb43-104"><a href="#cb43-104"></a></span>
+<span id="cb43-105"><a href="#cb43-105"></a><span class="fu">### Example 3 {-}</span></span>
+<span id="cb43-106"><a href="#cb43-106"></a></span>
+<span id="cb43-107"><a href="#cb43-107"></a>Let's consider Wollongong alone:</span>
+<span id="cb43-108"><a href="#cb43-108"></a></span>
+<span id="cb43-111"><a href="#cb43-111"></a><span class="in">```{r}</span></span>
+<span id="cb43-112"><a href="#cb43-112"></a><span class="co"># Don't worry about the syntax (we'll learn it soon)</span></span>
+<span id="cb43-113"><a href="#cb43-113"></a>woll <span class="ot">&lt;-</span> weather <span class="sc">|&gt;</span></span>
+<span id="cb43-114"><a href="#cb43-114"></a>  <span class="fu">filter</span>(location <span class="sc">==</span> <span class="st">"Wollongong"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb43-115"><a href="#cb43-115"></a>  <span class="fu">mutate</span>(<span class="at">date =</span> <span class="fu">as.Date</span>(date))  </span>
+<span id="cb43-116"><a href="#cb43-116"></a><span class="in">```</span></span>
+<span id="cb43-117"><a href="#cb43-117"></a></span>
+<span id="cb43-120"><a href="#cb43-120"></a><span class="in">```{r}</span></span>
+<span id="cb43-121"><a href="#cb43-121"></a><span class="co"># How often does it raintoday?</span></span>
+<span id="cb43-122"><a href="#cb43-122"></a><span class="co"># Fill your geometric layer with the color blue.</span></span>
+<span id="cb43-123"><a href="#cb43-123"></a><span class="fu">ggplot</span>(woll, <span class="fu">aes</span>(<span class="at">x =</span> raintoday)) <span class="sc">+</span></span>
+<span id="cb43-124"><a href="#cb43-124"></a>  <span class="fu">geom_bar</span>(<span class="at">fill =</span> <span class="st">"blue"</span>)</span>
+<span id="cb43-125"><a href="#cb43-125"></a><span class="in">```</span></span>
+<span id="cb43-126"><a href="#cb43-126"></a></span>
+<span id="cb43-129"><a href="#cb43-129"></a><span class="in">```{r}</span></span>
+<span id="cb43-130"><a href="#cb43-130"></a><span class="co"># If it does raintoday, what does this tell us about raintomorrow?</span></span>
+<span id="cb43-131"><a href="#cb43-131"></a><span class="co"># Use your intuition first</span></span>
+<span id="cb43-132"><a href="#cb43-132"></a><span class="fu">ggplot</span>(woll, <span class="fu">aes</span>(<span class="at">x =</span> raintoday, <span class="at">fill =</span> raintomorrow)) <span class="sc">+</span></span>
+<span id="cb43-133"><a href="#cb43-133"></a>  <span class="fu">geom_bar</span>()</span>
+<span id="cb43-134"><a href="#cb43-134"></a><span class="in">```</span></span>
+<span id="cb43-135"><a href="#cb43-135"></a></span>
+<span id="cb43-136"><a href="#cb43-136"></a></span>
+<span id="cb43-139"><a href="#cb43-139"></a><span class="in">```{r}</span></span>
+<span id="cb43-140"><a href="#cb43-140"></a><span class="co"># Now compare different approaches</span></span>
+<span id="cb43-141"><a href="#cb43-141"></a></span>
+<span id="cb43-142"><a href="#cb43-142"></a><span class="co"># Default: stacked bars</span></span>
+<span id="cb43-143"><a href="#cb43-143"></a><span class="fu">ggplot</span>(woll, <span class="fu">aes</span>(<span class="at">x =</span> raintoday, <span class="at">fill =</span> raintomorrow)) <span class="sc">+</span> </span>
+<span id="cb43-144"><a href="#cb43-144"></a>  <span class="fu">geom_bar</span>()</span>
+<span id="cb43-145"><a href="#cb43-145"></a><span class="in">```</span></span>
+<span id="cb43-146"><a href="#cb43-146"></a></span>
+<span id="cb43-149"><a href="#cb43-149"></a><span class="in">```{r}</span></span>
+<span id="cb43-150"><a href="#cb43-150"></a><span class="co"># Side-by-side bars</span></span>
+<span id="cb43-151"><a href="#cb43-151"></a><span class="fu">ggplot</span>(woll, <span class="fu">aes</span>(<span class="at">x =</span> raintoday, <span class="at">fill =</span> raintomorrow)) <span class="sc">+</span> </span>
+<span id="cb43-152"><a href="#cb43-152"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">"dodge"</span>)</span>
+<span id="cb43-153"><a href="#cb43-153"></a><span class="in">```</span></span>
+<span id="cb43-154"><a href="#cb43-154"></a></span>
+<span id="cb43-157"><a href="#cb43-157"></a><span class="in">```{r}</span></span>
+<span id="cb43-158"><a href="#cb43-158"></a><span class="co"># Proportional bars</span></span>
+<span id="cb43-159"><a href="#cb43-159"></a><span class="co"># position = "fill" refers to filling the frame, nothing to do with the color-related fill</span></span>
+<span id="cb43-160"><a href="#cb43-160"></a><span class="fu">ggplot</span>(woll, <span class="fu">aes</span>(<span class="at">x =</span> raintoday, <span class="at">fill =</span> raintomorrow)) <span class="sc">+</span> </span>
+<span id="cb43-161"><a href="#cb43-161"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">"fill"</span>)</span>
+<span id="cb43-162"><a href="#cb43-162"></a><span class="in">```</span></span>
+<span id="cb43-163"><a href="#cb43-163"></a></span>
+<span id="cb43-164"><a href="#cb43-164"></a></span>
+<span id="cb43-165"><a href="#cb43-165"></a><span class="fu">#### Reflection {-}</span></span>
+<span id="cb43-166"><a href="#cb43-166"></a></span>
+<span id="cb43-167"><a href="#cb43-167"></a>There's often not one "best plot", but a *combination* of plots that provide a complete picture:</span>
+<span id="cb43-168"><a href="#cb43-168"></a></span>
+<span id="cb43-169"><a href="#cb43-169"></a><span class="ss">-   </span>The stacked and side-by-side bars reflect that on most days, it does *not* rain.</span>
+<span id="cb43-170"><a href="#cb43-170"></a><span class="ss">-   </span>The proportional / filled bars *lose* that information, but make it easier to compare proportions: it's more likely to rain tomorrow if it also rains today.</span>
+<span id="cb43-171"><a href="#cb43-171"></a></span>
+<span id="cb43-172"><a href="#cb43-172"></a></span>
+<span id="cb43-173"><a href="#cb43-173"></a></span>
+<span id="cb43-174"><a href="#cb43-174"></a><span class="fu">### Example 4 {-}</span></span>
+<span id="cb43-175"><a href="#cb43-175"></a></span>
+<span id="cb43-176"><a href="#cb43-176"></a>Construct a plot that illustrates how 3pm temperatures (temp3pm) vary by <span class="in">`date`</span> in Wollongong. Represent each day on the plot and use a curve/line to help highlight the trends.</span>
+<span id="cb43-177"><a href="#cb43-177"></a></span>
+<span id="cb43-180"><a href="#cb43-180"></a><span class="in">```{r}</span></span>
+<span id="cb43-181"><a href="#cb43-181"></a><span class="co"># THINK: What variable goes on the y-axis?</span></span>
+<span id="cb43-182"><a href="#cb43-182"></a><span class="co"># For the curve, try adding span = 0.5 to tweak the curvature</span></span>
+<span id="cb43-183"><a href="#cb43-183"></a><span class="fu">ggplot</span>(woll, <span class="fu">aes</span>(<span class="at">x =</span> date, <span class="at">y =</span> temp3pm))<span class="sc">+</span></span>
+<span id="cb43-184"><a href="#cb43-184"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb43-185"><a href="#cb43-185"></a>  <span class="fu">geom_smooth</span> (<span class="at">span =</span> <span class="fl">0.5</span>)</span>
+<span id="cb43-186"><a href="#cb43-186"></a><span class="in">```</span></span>
+<span id="cb43-187"><a href="#cb43-187"></a></span>
+<span id="cb43-190"><a href="#cb43-190"></a><span class="in">```{r}</span></span>
+<span id="cb43-191"><a href="#cb43-191"></a><span class="co"># Instead of a curve that captures the general TREND,</span></span>
+<span id="cb43-192"><a href="#cb43-192"></a><span class="co"># draw a line that illustrates the movement of RAW temperatures from day to day</span></span>
+<span id="cb43-193"><a href="#cb43-193"></a><span class="co"># </span><span class="al">NOTE</span><span class="co">: We haven't learned this geom yet! Guess.</span></span>
+<span id="cb43-194"><a href="#cb43-194"></a><span class="fu">ggplot</span>(woll, <span class="fu">aes</span>(<span class="at">y =</span> temp3pm, <span class="at">x =</span> date)) <span class="sc">+</span></span>
+<span id="cb43-195"><a href="#cb43-195"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb43-196"><a href="#cb43-196"></a>  <span class="fu">geom_line</span>(<span class="at">color =</span> <span class="st">"skyblue"</span>)</span>
+<span id="cb43-197"><a href="#cb43-197"></a></span>
+<span id="cb43-198"><a href="#cb43-198"></a><span class="in">```</span></span>
+<span id="cb43-199"><a href="#cb43-199"></a></span>
+<span id="cb43-200"><a href="#cb43-200"></a>**NOTE:** A line plot isn't always appropriate! It can be useful in situations like this, when our data are chronological.</span>
+<span id="cb43-201"><a href="#cb43-201"></a></span>
+<span id="cb43-202"><a href="#cb43-202"></a></span>
+<span id="cb43-203"><a href="#cb43-203"></a><span class="fu">#### Reflection {-}</span></span>
+<span id="cb43-204"><a href="#cb43-204"></a></span>
+<span id="cb43-205"><a href="#cb43-205"></a>There's a seasonal / cyclic behavior in temperatures -- they're highest in January (around 23 degrees) and lowest in July (around 16 degrees). There are also some outliers -- some abnormally hot and cold days.</span>
+<span id="cb43-206"><a href="#cb43-206"></a></span>
+<span id="cb43-207"><a href="#cb43-207"></a></span>
+<span id="cb43-208"><a href="#cb43-208"></a><span class="fu">## New Stuff</span></span>
+<span id="cb43-209"><a href="#cb43-209"></a></span>
+<span id="cb43-210"><a href="#cb43-210"></a>Next, let's consider the entire <span class="in">`weather`</span> data for all 3 locations. The addition of <span class="in">`location`</span> adds a 3rd variable into our research questions:</span>
+<span id="cb43-211"><a href="#cb43-211"></a></span>
+<span id="cb43-212"><a href="#cb43-212"></a><span class="ss">-   </span>How does the relationship between <span class="in">`raintoday`</span> and <span class="in">`raintomorrow`</span> vary by <span class="in">`location`</span>?</span>
+<span id="cb43-213"><a href="#cb43-213"></a><span class="ss">-   </span>How does the behavior of <span class="in">`temp3pm`</span> over <span class="in">`date`</span> vary by <span class="in">`location`</span>?</span>
+<span id="cb43-214"><a href="#cb43-214"></a><span class="ss">-   </span>And so on.</span>
+<span id="cb43-215"><a href="#cb43-215"></a></span>
+<span id="cb43-216"><a href="#cb43-216"></a>Thus far, we've focused on the following components of a plot:</span>
+<span id="cb43-217"><a href="#cb43-217"></a></span>
+<span id="cb43-218"><a href="#cb43-218"></a><span class="ss">-   </span>setting up a **frame**</span>
+<span id="cb43-219"><a href="#cb43-219"></a><span class="ss">-   </span>adding **layers** / geometric elements</span>
+<span id="cb43-220"><a href="#cb43-220"></a><span class="ss">-   </span>splitting the plot into **facets** for different groups / categories</span>
+<span id="cb43-221"><a href="#cb43-221"></a><span class="ss">-   </span>change the **theme**, e.g. axis labels, color, fill</span>
+<span id="cb43-222"><a href="#cb43-222"></a></span>
+<span id="cb43-223"><a href="#cb43-223"></a>We'll have to think about all of this, along with **scales**. Scales change the color, fill, size, shape, or other properties according to the levels of a new *variable*. This is different than just assigning scale by, for example, <span class="in">`color = "blue"`</span>.</span>
+<span id="cb43-224"><a href="#cb43-224"></a></span>
+<span id="cb43-225"><a href="#cb43-225"></a>Work on the examples below in your groups. Check in with your intuition! We'll then discuss as a group as relevant.</span>
+<span id="cb43-226"><a href="#cb43-226"></a></span>
+<span id="cb43-227"><a href="#cb43-227"></a></span>
+<span id="cb43-228"><a href="#cb43-228"></a><span class="fu">### Example 5 {-}</span></span>
+<span id="cb43-229"><a href="#cb43-229"></a></span>
+<span id="cb43-232"><a href="#cb43-232"></a><span class="in">```{r}</span></span>
+<span id="cb43-233"><a href="#cb43-233"></a><span class="co"># Plot temp3pm vs temp9am</span></span>
+<span id="cb43-234"><a href="#cb43-234"></a><span class="co"># Change the code in order to indicate the location to which each data point corresponds</span></span>
+<span id="cb43-235"><a href="#cb43-235"></a><span class="fu">ggplot</span>(weather, <span class="fu">aes</span>(<span class="at">y =</span> temp3pm, <span class="at">x =</span> temp9am, <span class="at">color =</span> location)) <span class="sc">+</span> </span>
+<span id="cb43-236"><a href="#cb43-236"></a>  <span class="fu">geom_point</span>()</span>
+<span id="cb43-237"><a href="#cb43-237"></a><span class="in">```</span></span>
+<span id="cb43-238"><a href="#cb43-238"></a></span>
+<span id="cb43-241"><a href="#cb43-241"></a><span class="in">```{r}</span></span>
+<span id="cb43-242"><a href="#cb43-242"></a><span class="co"># Change the code in order to indicate the location to which each data point corresponds</span></span>
+<span id="cb43-243"><a href="#cb43-243"></a><span class="co"># AND identify the days on which it rained / didn't raintoday</span></span>
+<span id="cb43-244"><a href="#cb43-244"></a><span class="fu">ggplot</span>(weather, <span class="fu">aes</span>(<span class="at">y =</span> temp3pm, <span class="at">x =</span> temp9am, <span class="at">color =</span> location)) <span class="sc">+</span> </span>
+<span id="cb43-245"><a href="#cb43-245"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb43-246"><a href="#cb43-246"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>raintoday)</span>
+<span id="cb43-247"><a href="#cb43-247"></a><span class="in">```</span></span>
+<span id="cb43-248"><a href="#cb43-248"></a></span>
+<span id="cb43-251"><a href="#cb43-251"></a><span class="in">```{r}</span></span>
+<span id="cb43-252"><a href="#cb43-252"></a><span class="co"># How many ways can you think to make that plot of temp3pm vs temp9am with info about location and rain?</span></span>
+<span id="cb43-253"><a href="#cb43-253"></a><span class="co"># Play around!</span></span>
+<span id="cb43-254"><a href="#cb43-254"></a></span>
+<span id="cb43-255"><a href="#cb43-255"></a><span class="fu">ggplot</span>(weather, <span class="fu">aes</span>(<span class="at">y =</span> temp3pm, <span class="at">x =</span> temp9am, <span class="at">color =</span> location, <span class="at">shape =</span> raintoday)) <span class="sc">+</span> </span>
+<span id="cb43-256"><a href="#cb43-256"></a>  <span class="fu">geom_point</span>()</span>
+<span id="cb43-257"><a href="#cb43-257"></a></span>
+<span id="cb43-258"><a href="#cb43-258"></a><span class="in">```</span></span>
+<span id="cb43-259"><a href="#cb43-259"></a></span>
+<span id="cb43-260"><a href="#cb43-260"></a><span class="fu">### Example 6 {-}</span></span>
+<span id="cb43-261"><a href="#cb43-261"></a></span>
+<span id="cb43-264"><a href="#cb43-264"></a><span class="in">```{r}</span></span>
+<span id="cb43-265"><a href="#cb43-265"></a><span class="co"># Change the code in order to construct a line plot of temp3pm vs date for each separate location (no points!)</span></span>
+<span id="cb43-266"><a href="#cb43-266"></a><span class="fu">ggplot</span>(weather, <span class="fu">aes</span>(<span class="at">y =</span> temp3pm, <span class="at">x =</span> date, <span class="at">color =</span> location, <span class="at">group =</span> location)) <span class="sc">+</span> </span>
+<span id="cb43-267"><a href="#cb43-267"></a>  <span class="fu">geom_line</span>(<span class="at">linewidth =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb43-268"><a href="#cb43-268"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb43-269"><a href="#cb43-269"></a><span class="in">```</span></span>
+<span id="cb43-270"><a href="#cb43-270"></a></span>
+<span id="cb43-271"><a href="#cb43-271"></a></span>
+<span id="cb43-272"><a href="#cb43-272"></a><span class="fu">### Example 7 {-}</span></span>
+<span id="cb43-273"><a href="#cb43-273"></a></span>
+<span id="cb43-276"><a href="#cb43-276"></a><span class="in">```{r}</span></span>
+<span id="cb43-277"><a href="#cb43-277"></a><span class="co"># Plot the relationship of raintomorrow &amp; raintoday</span></span>
+<span id="cb43-278"><a href="#cb43-278"></a><span class="co"># Change the code in order to indicate this relationship by location</span></span>
+<span id="cb43-279"><a href="#cb43-279"></a><span class="fu">ggplot</span>(weather, <span class="fu">aes</span>(<span class="at">x =</span> raintoday, <span class="at">fill =</span> raintomorrow)) <span class="sc">+</span> </span>
+<span id="cb43-280"><a href="#cb43-280"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">"fill"</span>) <span class="sc">+</span></span>
+<span id="cb43-281"><a href="#cb43-281"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>location)</span>
+<span id="cb43-282"><a href="#cb43-282"></a><span class="in">```</span></span>
+<span id="cb43-283"><a href="#cb43-283"></a></span>
+<span id="cb43-284"><a href="#cb43-284"></a></span>
+<span id="cb43-285"><a href="#cb43-285"></a>::: {.callout-tip title="How to Not Get Overwhelmed?"}</span>
+<span id="cb43-286"><a href="#cb43-286"></a></span>
+<span id="cb43-287"><a href="#cb43-287"></a>There's no end to the number and type of visualizations you *could* make. And it's important to not just throw spaghetti at the wall until something sticks. [FlowingData](http://flowingdata.com/2017/01/24/one-dataset-visualized-25-ways/) shows that one dataset can be visualized *many* ways, and makes good recommendations for data viz workflow, which we modify and build upon here:</span>
+<span id="cb43-288"><a href="#cb43-288"></a></span>
+<span id="cb43-289"><a href="#cb43-289"></a><span class="ss">-   </span>**Identify simple research questions.**\</span>
+<span id="cb43-290"><a href="#cb43-290"></a>    What do you want to understand about the variables or the relationships among them?</span>
+<span id="cb43-291"><a href="#cb43-291"></a></span>
+<span id="cb43-292"><a href="#cb43-292"></a><span class="ss">-   </span>**Start with the basics and work incrementally.**</span>
+<span id="cb43-293"><a href="#cb43-293"></a><span class="ss">    -   </span>Identify what variables you want to include in your plot and what structure these have (eg: categorical, quantitative, dates)</span>
+<span id="cb43-294"><a href="#cb43-294"></a><span class="ss">    -   </span>Start simply. Build a plot of just 1 of these variables, or the relationship between 2 of these variables.</span>
+<span id="cb43-295"><a href="#cb43-295"></a><span class="ss">    -   </span>Set up a plotting frame and add just **one geometric layer at a time**.</span>
+<span id="cb43-296"><a href="#cb43-296"></a><span class="ss">    -   </span>Start tweaking: add whatever new variables you want to examine,</span>
+<span id="cb43-297"><a href="#cb43-297"></a></span>
+<span id="cb43-298"><a href="#cb43-298"></a><span class="ss">-   </span>**Ask your plot questions.**</span>
+<span id="cb43-299"><a href="#cb43-299"></a><span class="ss">    -   </span>What questions *does* your plot answer? What questions are left *unanswered* by your plot?</span>
+<span id="cb43-300"><a href="#cb43-300"></a><span class="ss">    -   </span>What *new* questions does your plot spark / inspire?</span>
+<span id="cb43-301"><a href="#cb43-301"></a><span class="ss">    -   </span>Do you have the viz tools to answer these questions, or might you learn more?</span>
+<span id="cb43-302"><a href="#cb43-302"></a></span>
+<span id="cb43-303"><a href="#cb43-303"></a><span class="ss">-   </span>**Focus.**\</span>
+<span id="cb43-304"><a href="#cb43-304"></a>    Reporting a large number of visualizations can overwhelm the audience and obscure your conclusions. Instead, pick out a focused yet comprehensive set of visualizations.</span>
+<span id="cb43-305"><a href="#cb43-305"></a></span>
+<span id="cb43-306"><a href="#cb43-306"></a></span>
+<span id="cb43-307"><a href="#cb43-307"></a>:::</span>
+<span id="cb43-308"><a href="#cb43-308"></a></span>
+<span id="cb43-309"><a href="#cb43-309"></a></span>
+<span id="cb43-310"><a href="#cb43-310"></a><span class="fu">## Exercises (required)</span></span>
+<span id="cb43-311"><a href="#cb43-311"></a></span>
+<span id="cb43-312"><a href="#cb43-312"></a></span>
+<span id="cb43-313"><a href="#cb43-313"></a><span class="fu">### The story {-}</span></span>
+<span id="cb43-314"><a href="#cb43-314"></a></span>
+<span id="cb43-315"><a href="#cb43-315"></a>Though far from a perfect assessment of academic preparedness, SAT scores have historically been used as one measurement of a state's education system. The <span class="in">`education`</span> dataset contains various education variables for each state:</span>
+<span id="cb43-316"><a href="#cb43-316"></a></span>
+<span id="cb43-319"><a href="#cb43-319"></a><span class="in">```{r}</span></span>
+<span id="cb43-320"><a href="#cb43-320"></a><span class="co"># Import and check out data</span></span>
+<span id="cb43-321"><a href="#cb43-321"></a>education <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"https://mac-stat.github.io/data/sat.csv"</span>)</span>
+<span id="cb43-322"><a href="#cb43-322"></a><span class="fu">head</span>(education)</span>
+<span id="cb43-323"><a href="#cb43-323"></a><span class="in">```</span></span>
+<span id="cb43-324"><a href="#cb43-324"></a></span>
+<span id="cb43-325"><a href="#cb43-325"></a>A codebook is provided by Danny Kaplan who also made these data accessible:</span>
+<span id="cb43-326"><a href="#cb43-326"></a></span>
+<span id="cb43-327"><a href="#cb43-327"></a><span class="al">![](https://mac-stat.github.io/images/112/SATcodebook.png)</span></span>
+<span id="cb43-328"><a href="#cb43-328"></a></span>
+<span id="cb43-329"><a href="#cb43-329"></a></span>
+<span id="cb43-330"><a href="#cb43-330"></a><span class="fu">### Exercise 1: SAT scores {-}</span></span>
+<span id="cb43-331"><a href="#cb43-331"></a></span>
+<span id="cb43-332"><a href="#cb43-332"></a><span class="fu">#### Part a {-}</span></span>
+<span id="cb43-333"><a href="#cb43-333"></a></span>
+<span id="cb43-334"><a href="#cb43-334"></a>Construct a plot of how the average <span class="in">`sat`</span> scores vary from state to state. (Just use 1 variable -- <span class="in">`sat`</span> not <span class="in">`State`</span>!)</span>
+<span id="cb43-335"><a href="#cb43-335"></a></span>
+<span id="cb43-338"><a href="#cb43-338"></a><span class="in">```{r}</span></span>
+<span id="cb43-339"><a href="#cb43-339"></a><span class="fu">ggplot</span>(education, <span class="fu">aes</span>(<span class="at">x =</span> sat)) <span class="sc">+</span></span>
+<span id="cb43-340"><a href="#cb43-340"></a>  <span class="fu">geom_density</span>()</span>
+<span id="cb43-341"><a href="#cb43-341"></a><span class="in">```</span></span>
+<span id="cb43-342"><a href="#cb43-342"></a></span>
+<span id="cb43-343"><a href="#cb43-343"></a><span class="fu">#### Part b {-}</span></span>
+<span id="cb43-344"><a href="#cb43-344"></a></span>
+<span id="cb43-345"><a href="#cb43-345"></a>Summarize your observations from the plot. Comment on the basics: range, typical outcomes, shape. (Any theories about what might explain this non-normal shape?)</span>
+<span id="cb43-346"><a href="#cb43-346"></a></span>
+<span id="cb43-347"><a href="#cb43-347"></a><span class="at">&gt; The range seems to be from around 800 to 1100. The higher point is around 900 and then there is a decrease in bell shape form, this is the typical outcome. There is a second bell shaped curve between 1000 and 1100, therefore is bi-modal. This shape could be explained by the spending per pupil invested. </span></span>
+<span id="cb43-348"><a href="#cb43-348"></a></span>
+<span id="cb43-349"><a href="#cb43-349"></a><span class="fu">### Exercise 2: SAT Scores vs Per Pupil Spending &amp; SAT Scores vs Salaries {-}</span></span>
+<span id="cb43-350"><a href="#cb43-350"></a></span>
+<span id="cb43-351"><a href="#cb43-351"></a>The first question we'd like to answer is: Can the variability in <span class="in">`sat`</span> scores from state to state be partially explained by how much a state spends on education, specifically its per pupil spending (<span class="in">`expend`</span>) and typical teacher <span class="in">`salary`</span>?</span>
+<span id="cb43-352"><a href="#cb43-352"></a></span>
+<span id="cb43-353"><a href="#cb43-353"></a><span class="fu">#### Part a {-}</span></span>
+<span id="cb43-354"><a href="#cb43-354"></a></span>
+<span id="cb43-357"><a href="#cb43-357"></a><span class="in">```{r}</span></span>
+<span id="cb43-358"><a href="#cb43-358"></a><span class="co"># Construct a plot of sat vs expend</span></span>
+<span id="cb43-359"><a href="#cb43-359"></a><span class="co"># Include a "best fit linear regression model" (HINT: method = "lm")</span></span>
+<span id="cb43-360"><a href="#cb43-360"></a><span class="fu">ggplot</span>(education, <span class="fu">aes</span>(<span class="at">y =</span> sat, <span class="at">x =</span> expend)) <span class="sc">+</span></span>
+<span id="cb43-361"><a href="#cb43-361"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb43-362"><a href="#cb43-362"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>)</span>
+<span id="cb43-363"><a href="#cb43-363"></a></span>
+<span id="cb43-364"><a href="#cb43-364"></a><span class="in">```</span></span>
+<span id="cb43-365"><a href="#cb43-365"></a></span>
+<span id="cb43-368"><a href="#cb43-368"></a><span class="in">```{r}</span></span>
+<span id="cb43-369"><a href="#cb43-369"></a><span class="co"># Construct a plot of sat vs salary</span></span>
+<span id="cb43-370"><a href="#cb43-370"></a><span class="co"># Include a "best fit linear regression model" (HINT: method = "lm")</span></span>
+<span id="cb43-371"><a href="#cb43-371"></a><span class="fu">ggplot</span>(education, <span class="fu">aes</span>(<span class="at">y =</span> sat, <span class="at">x =</span> salary)) <span class="sc">+</span></span>
+<span id="cb43-372"><a href="#cb43-372"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb43-373"><a href="#cb43-373"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>)</span>
+<span id="cb43-374"><a href="#cb43-374"></a><span class="in">```</span></span>
+<span id="cb43-375"><a href="#cb43-375"></a></span>
+<span id="cb43-376"><a href="#cb43-376"></a><span class="fu">#### Part b {-}</span></span>
+<span id="cb43-377"><a href="#cb43-377"></a></span>
+<span id="cb43-378"><a href="#cb43-378"></a>What are the relationship trends between SAT scores and spending? Is there anything that surprises you?</span>
+<span id="cb43-379"><a href="#cb43-379"></a></span>
+<span id="cb43-380"><a href="#cb43-380"></a></span>
+<span id="cb43-381"><a href="#cb43-381"></a><span class="fu">### Exercise 3: SAT Scores vs Per Pupil Spending *and* Teacher Salaries {-}</span></span>
+<span id="cb43-382"><a href="#cb43-382"></a></span>
+<span id="cb43-383"><a href="#cb43-383"></a>Construct *one* visualization of the relationship of `sat` with `salary` *and* <span class="in">`expend`</span>. HINT: Start with just 2 variables and tweak that code to add the third variable. Try out a few things!</span>
+<span id="cb43-384"><a href="#cb43-384"></a></span>
+<span id="cb43-387"><a href="#cb43-387"></a><span class="in">```{r}</span></span>
+<span id="cb43-388"><a href="#cb43-388"></a><span class="fu">ggplot</span>(education, <span class="fu">aes</span>(<span class="at">y =</span> sat, <span class="at">x =</span> salary, <span class="at">color =</span> expend)) <span class="sc">+</span></span>
+<span id="cb43-389"><a href="#cb43-389"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb43-390"><a href="#cb43-390"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>)</span>
+<span id="cb43-391"><a href="#cb43-391"></a><span class="in">```</span></span>
+<span id="cb43-392"><a href="#cb43-392"></a></span>
+<span id="cb43-393"><a href="#cb43-393"></a></span>
+<span id="cb43-394"><a href="#cb43-394"></a></span>
+<span id="cb43-395"><a href="#cb43-395"></a><span class="fu">### Exercise 4: Another way to Incorporate Scale {-}</span></span>
+<span id="cb43-396"><a href="#cb43-396"></a></span>
+<span id="cb43-397"><a href="#cb43-397"></a>It can be tough to distinguish color scales and size scales for quantitative variables. Another option is to *discretize* a quantitative variable, or basically cut it up into *categories*.</span>
+<span id="cb43-398"><a href="#cb43-398"></a></span>
+<span id="cb43-399"><a href="#cb43-399"></a>Construct the plot below. Check out the code and think about what's happening here. What happens if you change "2" to "3"?</span>
+<span id="cb43-400"><a href="#cb43-400"></a></span>
+<span id="cb43-401"><a href="#cb43-401"></a><span class="in">```{r eval = FALSE}</span></span>
+<span id="cb43-402"><a href="#cb43-402"></a><span class="in">ggplot(education, aes(y = sat, x = salary, color = cut(expend, 4))) + </span></span>
+<span id="cb43-403"><a href="#cb43-403"></a><span class="in">  geom_point() + </span></span>
+<span id="cb43-404"><a href="#cb43-404"></a><span class="in">  geom_smooth(se = FALSE, method = "lm")</span></span>
+<span id="cb43-405"><a href="#cb43-405"></a><span class="in">```</span></span>
+<span id="cb43-406"><a href="#cb43-406"></a></span>
+<span id="cb43-407"><a href="#cb43-407"></a>Describe the trivariate relationship between <span class="in">`sat`</span>, <span class="in">`salary`</span>, and <span class="in">`expend`</span>.</span>
+<span id="cb43-408"><a href="#cb43-408"></a></span>
+<span id="cb43-409"><a href="#cb43-409"></a><span class="at">&gt; States with lower expend per pupil and teacher's salary seems to have a better perfomance in the SAT.</span></span>
+<span id="cb43-410"><a href="#cb43-410"></a></span>
+<span id="cb43-411"><a href="#cb43-411"></a><span class="fu">### Exercise 5: Finally an Explanation {-}</span></span>
+<span id="cb43-412"><a href="#cb43-412"></a></span>
+<span id="cb43-413"><a href="#cb43-413"></a>It's strange that SAT scores *seem* to decrease with spending. But we're leaving out an important variable from our analysis: the fraction of a state's students that actually take the SAT. The <span class="in">`fracCat`</span> variable indicates this fraction: <span class="in">`low`</span> (under 15% take the SAT), <span class="in">`medium`</span> (15-45% take the SAT), and <span class="in">`high`</span> (at least 45% take the SAT).</span>
+<span id="cb43-414"><a href="#cb43-414"></a></span>
+<span id="cb43-415"><a href="#cb43-415"></a><span class="fu">#### Part a {-}</span></span>
+<span id="cb43-416"><a href="#cb43-416"></a></span>
+<span id="cb43-417"><a href="#cb43-417"></a>Build a univariate viz of <span class="in">`fracCat`</span> to better understand how many states fall into each category.</span>
+<span id="cb43-418"><a href="#cb43-418"></a></span>
+<span id="cb43-421"><a href="#cb43-421"></a><span class="in">```{r}</span></span>
+<span id="cb43-422"><a href="#cb43-422"></a><span class="fu">ggplot</span>(education, <span class="fu">aes</span>(<span class="at">x =</span> fracCat)) <span class="sc">+</span></span>
+<span id="cb43-423"><a href="#cb43-423"></a>  <span class="fu">geom_bar</span>()</span>
+<span id="cb43-424"><a href="#cb43-424"></a><span class="in">```</span></span>
+<span id="cb43-425"><a href="#cb43-425"></a></span>
+<span id="cb43-426"><a href="#cb43-426"></a><span class="fu">#### Part b {-}</span></span>
+<span id="cb43-427"><a href="#cb43-427"></a></span>
+<span id="cb43-428"><a href="#cb43-428"></a>Build 2 bivariate visualizations that demonstrate the relationship between <span class="in">`sat`</span> and <span class="in">`fracCat`</span>. What story does your graphic tell and why does this make contextual sense?</span>
+<span id="cb43-429"><a href="#cb43-429"></a></span>
+<span id="cb43-432"><a href="#cb43-432"></a><span class="in">```{r}</span></span>
+<span id="cb43-433"><a href="#cb43-433"></a><span class="fu">ggplot</span>(education, <span class="fu">aes</span>(<span class="at">x =</span> sat, <span class="at">fill =</span> fracCat)) <span class="sc">+</span></span>
+<span id="cb43-434"><a href="#cb43-434"></a>  <span class="fu">geom_density</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb43-435"><a href="#cb43-435"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb43-436"><a href="#cb43-436"></a><span class="in">```</span></span>
+<span id="cb43-437"><a href="#cb43-437"></a></span>
+<span id="cb43-438"><a href="#cb43-438"></a><span class="fu">#### Part c {-}</span></span>
+<span id="cb43-439"><a href="#cb43-439"></a></span>
+<span id="cb43-440"><a href="#cb43-440"></a>Make a trivariate visualization that demonstrates the relationship of <span class="in">`sat`</span> with <span class="in">`expend`</span> AND <span class="in">`fracCat`</span>. Highlight the differences in <span class="in">`fracCat`</span> groups through color AND unique trend lines. What story does your graphic tell?\</span>
+<span id="cb43-441"><a href="#cb43-441"></a>Does it still seem that SAT scores decrease as spending increases?</span>
+<span id="cb43-442"><a href="#cb43-442"></a></span>
+<span id="cb43-445"><a href="#cb43-445"></a><span class="in">```{r}</span></span>
+<span id="cb43-446"><a href="#cb43-446"></a><span class="fu">ggplot</span>(education, <span class="fu">aes</span>(<span class="at">y =</span> sat, <span class="at">x =</span> expend, <span class="at">color =</span> fracCat)) <span class="sc">+</span></span>
+<span id="cb43-447"><a href="#cb43-447"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb43-448"><a href="#cb43-448"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>)</span>
+<span id="cb43-449"><a href="#cb43-449"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb43-450"><a href="#cb43-450"></a><span class="in">```</span></span>
+<span id="cb43-451"><a href="#cb43-451"></a></span>
+<span id="cb43-452"><a href="#cb43-452"></a><span class="fu">#### Part d {-}</span></span>
+<span id="cb43-453"><a href="#cb43-453"></a></span>
+<span id="cb43-454"><a href="#cb43-454"></a>Putting all of this together, explain this example of **Simpson’s Paradox**. That is, why did it appear that SAT scores decrease as spending increases even though the *opposite* is true?</span>
+<span id="cb43-455"><a href="#cb43-455"></a></span>
+<span id="cb43-456"><a href="#cb43-456"></a><span class="at">&gt; States with lower spending seems to have higher scores because the students who choose to take the SAT are lower than in other states. </span></span>
+<span id="cb43-457"><a href="#cb43-457"></a></span>
+<span id="cb43-458"><a href="#cb43-458"></a><span class="fu">## Exercises (optional)</span></span>
+<span id="cb43-459"><a href="#cb43-459"></a></span>
+<span id="cb43-460"><a href="#cb43-460"></a><span class="fu">### Exercise 6: Heat Maps {-}</span></span>
+<span id="cb43-461"><a href="#cb43-461"></a></span>
+<span id="cb43-462"><a href="#cb43-462"></a>As usual, we've only just scratched the surface! There are lots of other data viz techniques for exploring multivariate relationships. Let's start with a **heat map**.</span>
+<span id="cb43-463"><a href="#cb43-463"></a></span>
+<span id="cb43-464"><a href="#cb43-464"></a><span class="fu">#### Part a {-}</span></span>
+<span id="cb43-465"><a href="#cb43-465"></a></span>
+<span id="cb43-466"><a href="#cb43-466"></a>Run the chunks below. Check out the code, but don't worry about every little detail! NOTES:</span>
+<span id="cb43-467"><a href="#cb43-467"></a></span>
+<span id="cb43-468"><a href="#cb43-468"></a><span class="ss">-   </span>This is *not* part of the <span class="in">`ggplot()`</span> grammar, making it a bit complicated.</span>
+<span id="cb43-469"><a href="#cb43-469"></a><span class="ss">-   </span>If you're curious about what a line in the plot does, comment it out (<span class="in">`#`</span>) and check out what happens!</span>
+<span id="cb43-470"><a href="#cb43-470"></a><span class="ss">-   </span>In the plot, for each state (row), each variable (column) is scaled to indicate whether the state has a relative high value (yellow), a relatively low value (purple), or something in between (blues/greens).</span>
+<span id="cb43-471"><a href="#cb43-471"></a><span class="ss">-   </span>You can also play with the color scheme. Type <span class="in">`?cm.colors`</span> in the *console* to learn about various options.</span>
+<span id="cb43-472"><a href="#cb43-472"></a><span class="ss">-   </span>We'll improve the plot later, so don't spend too much time trying to learn something from this plot.</span>
+<span id="cb43-473"><a href="#cb43-473"></a></span>
+<span id="cb43-474"><a href="#cb43-474"></a><span class="in">```{r eval = FALSE, fig.width = 8, fig.height = 15}</span></span>
+<span id="cb43-475"><a href="#cb43-475"></a><span class="in"># Remove the "State" column and use it to label the rows</span></span>
+<span id="cb43-476"><a href="#cb43-476"></a><span class="in"># Then scale the variables</span></span>
+<span id="cb43-477"><a href="#cb43-477"></a><span class="in">plot_data &lt;- education |&gt; </span></span>
+<span id="cb43-478"><a href="#cb43-478"></a><span class="in">  column_to_rownames("State") |&gt; </span></span>
+<span id="cb43-479"><a href="#cb43-479"></a><span class="in">  data.matrix() |&gt; </span></span>
+<span id="cb43-480"><a href="#cb43-480"></a><span class="in">  scale()</span></span>
+<span id="cb43-481"><a href="#cb43-481"></a></span>
+<span id="cb43-482"><a href="#cb43-482"></a><span class="in"># Load the gplots package needed for heatmaps</span></span>
+<span id="cb43-483"><a href="#cb43-483"></a><span class="in">library(gplots)</span></span>
+<span id="cb43-484"><a href="#cb43-484"></a></span>
+<span id="cb43-485"><a href="#cb43-485"></a><span class="in"># Construct heatmap 1</span></span>
+<span id="cb43-486"><a href="#cb43-486"></a><span class="in">heatmap.2(plot_data,</span></span>
+<span id="cb43-487"><a href="#cb43-487"></a><span class="in">  dendrogram = "none",</span></span>
+<span id="cb43-488"><a href="#cb43-488"></a><span class="in">  Rowv = NA, </span></span>
+<span id="cb43-489"><a href="#cb43-489"></a><span class="in">  scale = "column",</span></span>
+<span id="cb43-490"><a href="#cb43-490"></a><span class="in">  keysize = 0.7, </span></span>
+<span id="cb43-491"><a href="#cb43-491"></a><span class="in">  density.info = "none",</span></span>
+<span id="cb43-492"><a href="#cb43-492"></a><span class="in">  col = hcl.colors(256), </span></span>
+<span id="cb43-493"><a href="#cb43-493"></a><span class="in">  margins = c(10, 20),</span></span>
+<span id="cb43-494"><a href="#cb43-494"></a><span class="in">  colsep = c(1:7), rowsep = (1:50), sepwidth = c(0.05, 0.05),</span></span>
+<span id="cb43-495"><a href="#cb43-495"></a><span class="in">  sepcolor = "white", trace = "none"</span></span>
+<span id="cb43-496"><a href="#cb43-496"></a><span class="in">)</span></span>
+<span id="cb43-497"><a href="#cb43-497"></a><span class="in">```</span></span>
+<span id="cb43-498"><a href="#cb43-498"></a></span>
+<span id="cb43-499"><a href="#cb43-499"></a><span class="in">```{r eval = FALSE, fig.width = 8, fig.height = 15}</span></span>
+<span id="cb43-500"><a href="#cb43-500"></a><span class="in"># Construct heatmap 2</span></span>
+<span id="cb43-501"><a href="#cb43-501"></a><span class="in">heatmap.2(plot_data,</span></span>
+<span id="cb43-502"><a href="#cb43-502"></a><span class="in">  dendrogram = "none",</span></span>
+<span id="cb43-503"><a href="#cb43-503"></a><span class="in">  Rowv = TRUE,             ### WE CHANGED THIS FROM NA TO TRUE</span></span>
+<span id="cb43-504"><a href="#cb43-504"></a><span class="in">  scale = "column",</span></span>
+<span id="cb43-505"><a href="#cb43-505"></a><span class="in">  keysize = 0.7, </span></span>
+<span id="cb43-506"><a href="#cb43-506"></a><span class="in">  density.info = "none",</span></span>
+<span id="cb43-507"><a href="#cb43-507"></a><span class="in">  col = hcl.colors(256), </span></span>
+<span id="cb43-508"><a href="#cb43-508"></a><span class="in">  margins = c(10, 20),</span></span>
+<span id="cb43-509"><a href="#cb43-509"></a><span class="in">  colsep = c(1:7), rowsep = (1:50), sepwidth = c(0.05, 0.05),</span></span>
+<span id="cb43-510"><a href="#cb43-510"></a><span class="in">  sepcolor = "white", trace = "none"</span></span>
+<span id="cb43-511"><a href="#cb43-511"></a><span class="in">)</span></span>
+<span id="cb43-512"><a href="#cb43-512"></a><span class="in">```</span></span>
+<span id="cb43-513"><a href="#cb43-513"></a></span>
+<span id="cb43-514"><a href="#cb43-514"></a><span class="in">```{r eval = FALSE, fig.width = 8, fig.height = 15}</span></span>
+<span id="cb43-515"><a href="#cb43-515"></a><span class="in"># Construct heatmap 3</span></span>
+<span id="cb43-516"><a href="#cb43-516"></a><span class="in">heatmap.2(plot_data,</span></span>
+<span id="cb43-517"><a href="#cb43-517"></a><span class="in">  dendrogram = "row",       ### WE CHANGED THIS FROM "none" TO "row"</span></span>
+<span id="cb43-518"><a href="#cb43-518"></a><span class="in">  Rowv = TRUE,            </span></span>
+<span id="cb43-519"><a href="#cb43-519"></a><span class="in">  scale = "column",</span></span>
+<span id="cb43-520"><a href="#cb43-520"></a><span class="in">  keysize = 0.7, </span></span>
+<span id="cb43-521"><a href="#cb43-521"></a><span class="in">  density.info = "none",</span></span>
+<span id="cb43-522"><a href="#cb43-522"></a><span class="in">  col = hcl.colors(256), </span></span>
+<span id="cb43-523"><a href="#cb43-523"></a><span class="in">  margins = c(10, 20),</span></span>
+<span id="cb43-524"><a href="#cb43-524"></a><span class="in">  colsep = c(1:7), rowsep = (1:50), sepwidth = c(0.05, 0.05),</span></span>
+<span id="cb43-525"><a href="#cb43-525"></a><span class="in">  sepcolor = "white", trace = "none"</span></span>
+<span id="cb43-526"><a href="#cb43-526"></a><span class="in">)</span></span>
+<span id="cb43-527"><a href="#cb43-527"></a><span class="in">```</span></span>
+<span id="cb43-528"><a href="#cb43-528"></a></span>
+<span id="cb43-529"><a href="#cb43-529"></a><span class="fu">#### Part b {-}</span></span>
+<span id="cb43-530"><a href="#cb43-530"></a></span>
+<span id="cb43-531"><a href="#cb43-531"></a>In the final two plots, the states (rows) are rearranged by similarity with respect to these education metrics. The *final* plot includes a **dendrogram** which further indicates *clusters* of similar states. In short, states that have a shorter path to connection are more similar than others.</span>
+<span id="cb43-532"><a href="#cb43-532"></a></span>
+<span id="cb43-533"><a href="#cb43-533"></a>Putting this all together, what insight do you gain about the education trends across U.S. states? Which states are similar? In what ways are they similar? Are there any outliers with respect to 1 or more of the education metrics?</span>
+<span id="cb43-534"><a href="#cb43-534"></a></span>
+<span id="cb43-535"><a href="#cb43-535"></a></span>
+<span id="cb43-536"><a href="#cb43-536"></a></span>
+<span id="cb43-537"><a href="#cb43-537"></a><span class="fu">### Exercise 7: Star plots {-}</span></span>
+<span id="cb43-538"><a href="#cb43-538"></a></span>
+<span id="cb43-539"><a href="#cb43-539"></a>Like heat maps, star plots indicate the relative scale of each variable for each state. Thus, we can use star maps to identify similar groups of states, and unusual states!</span>
+<span id="cb43-540"><a href="#cb43-540"></a></span>
+<span id="cb43-541"><a href="#cb43-541"></a><span class="fu">#### Part a {-}</span></span>
+<span id="cb43-542"><a href="#cb43-542"></a></span>
+<span id="cb43-543"><a href="#cb43-543"></a>Construct and check out the star plot below. Note that each state has a "pie", with each segment corresponding to a different variable. The larger a segment, the larger that variable's value is in that state. For example:</span>
+<span id="cb43-544"><a href="#cb43-544"></a></span>
+<span id="cb43-545"><a href="#cb43-545"></a><span class="ss">-   </span>Check out Minnesota. How does Minnesota's education metrics compare to those in other states? What metrics are relatively high? Relatively low?</span>
+<span id="cb43-546"><a href="#cb43-546"></a><span class="ss">-   </span>What states appear to be similar? Do these observations agree with those that you gained from the heat map?</span>
+<span id="cb43-547"><a href="#cb43-547"></a></span>
+<span id="cb43-548"><a href="#cb43-548"></a><span class="in">```{r eval = FALSE, fig.width = 10, fig.height = 20}</span></span>
+<span id="cb43-549"><a href="#cb43-549"></a><span class="in">stars(plot_data,</span></span>
+<span id="cb43-550"><a href="#cb43-550"></a><span class="in">  flip.labels = FALSE,</span></span>
+<span id="cb43-551"><a href="#cb43-551"></a><span class="in">  key.loc = c(10, 1.5),</span></span>
+<span id="cb43-552"><a href="#cb43-552"></a><span class="in">  cex = 1, </span></span>
+<span id="cb43-553"><a href="#cb43-553"></a><span class="in">  draw.segments = TRUE</span></span>
+<span id="cb43-554"><a href="#cb43-554"></a><span class="in">)</span></span>
+<span id="cb43-555"><a href="#cb43-555"></a><span class="in">```</span></span>
+<span id="cb43-556"><a href="#cb43-556"></a></span>
+<span id="cb43-557"><a href="#cb43-557"></a><span class="fu">#### Part b {-}</span></span>
+<span id="cb43-558"><a href="#cb43-558"></a></span>
+<span id="cb43-559"><a href="#cb43-559"></a>Finally, let's plot the state stars by *geographic* location! What new insight do you gain here?!</span>
+<span id="cb43-560"><a href="#cb43-560"></a></span>
+<span id="cb43-561"><a href="#cb43-561"></a><span class="in">```{r eval = FALSE, fig.width = 10, fig.height = 7}</span></span>
+<span id="cb43-562"><a href="#cb43-562"></a><span class="in">stars(plot_data,</span></span>
+<span id="cb43-563"><a href="#cb43-563"></a><span class="in">  flip.labels = FALSE,</span></span>
+<span id="cb43-564"><a href="#cb43-564"></a><span class="in">  locations = data.matrix(as.data.frame(state.center)),  # added external data to arrange by geo location</span></span>
+<span id="cb43-565"><a href="#cb43-565"></a><span class="in">  key.loc = c(-110, 28),</span></span>
+<span id="cb43-566"><a href="#cb43-566"></a><span class="in">  cex = 1, </span></span>
+<span id="cb43-567"><a href="#cb43-567"></a><span class="in">  draw.segments = TRUE</span></span>
+<span id="cb43-568"><a href="#cb43-568"></a><span class="in">)</span></span>
+<span id="cb43-569"><a href="#cb43-569"></a><span class="in">```</span></span>
+</code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
-
 
 
 
