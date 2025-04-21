@@ -8,6 +8,7 @@ library(tidytuesdayR)
 library(tidyverse)
 library(rnaturalearth)
 library(sf)
+library(dplyr)
 
 tuesdata <- tt_load('2020-02-18')
 fc <- tuesdata$food_consumption
@@ -46,7 +47,36 @@ Which 5 countries consume the most food are?
 :::
 
 ```{r}
+top5_consumers <- fc |>
+  group_by(country) |>
+  summarise(total_consumption = sum(consumption, na.rm = TRUE)) |>
+  arrange(desc(total_consumption)) |>
+  head(5)
 
+top5_consumers
+```
+```{r}
+ggplot(top5_consumers, aes(x = reorder(country, total_consumption), y = total_consumption, fill = country)) +
+  geom_col(show.legend = FALSE) +
+  labs(title = "Top 5 Countries by Total Food Consumption",
+       x = "Country",
+       y = "Total Consumption (kg/person/year)") +
+  theme_minimal()
+```
+::: {.callout-note title="Research Question 2"}
+
+Which top 5 countries consume each food are?
+
+  - Show the answer as a 3-column table (show the food category as the first column followed by country snd consumption) and as a graph.
+  - For each food, sort the countries based on consumption from largest to smallest.
+  - Use the cleaned dataframe
+ 
+:::
+
+```{r}
+top5_per_food <- fc |>
+  group_by(food_category, country) |>
+  summarise(total_consumption = sum(consumption, na.rm = TRUE))
 ```
 
 
