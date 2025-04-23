@@ -195,7 +195,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../bw/solo-project.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Solo project</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Solo Project</span></span></a>
   </div>
 </li>
       </ul>
@@ -212,13 +212,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../ss/ss-1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">ss-1</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Visualization</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../ss/ss-2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">ss-2</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Wrangling</span></span></a>
   </div>
 </li>
       </ul>
@@ -317,7 +317,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../bw/bw-uni.html">Best Work</a></li><li class="breadcrumb-item"><a href="../bw/bw-uni.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Univariate Viz</span></a></li></ol></nav><div class="quarto-title">
 <div class="quarto-title-block"><div><h1 class="title">
 <span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Univariate Viz</span>
-</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li><li><hr class="dropdown-divider"></li><li><a id="quarto-view-source" class="dropdown-item" href="javascript:void(0)" role="button">View Source</a></li></ul></div></div>
 </div>
 
 
@@ -331,83 +331,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
 
 
-</header><p>Use this file to generate a professional looking <strong>univariate</strong> visualization. The visualization will not perfect the first time but you are expected to improve on it throughout the semester especially after covering advanced topics such as effective viz.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">library</span>(mosaic)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Registered S3 method overwritten by 'mosaic':
-  method                           from   
-  fortify.SpatialPolygonsDataFrame ggplot2</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>
-The 'mosaic' package masks several functions from core packages in order to add 
-additional features.  The original behavior of these functions should not be affected by this.</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>
-Attaching package: 'mosaic'</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>The following objects are masked from 'package:dplyr':
-
-    count, do, tally</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>The following object is masked from 'package:Matrix':
-
-    mean</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>The following object is masked from 'package:ggplot2':
-
-    stat</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>The following objects are masked from 'package:stats':
-
-    binom.test, cor, cor.test, cov, fivenum, IQR, median, prop.test,
-    quantile, sd, t.test, var</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>The following objects are masked from 'package:base':
-
-    max, mean, min, prod, range, sample, sum</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
-✔ forcats   1.0.0     ✔ stringr   1.5.1
-✔ lubridate 1.9.3     ✔ tibble    3.2.1
-✔ purrr     1.0.2     ✔ tidyr     1.3.1
-✔ readr     2.1.5     </code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-✖ mosaic::count() masks dplyr::count()
-✖ purrr::cross()  masks mosaic::cross()
-✖ mosaic::do()    masks dplyr::do()
-✖ tidyr::expand() masks Matrix::expand()
-✖ dplyr::filter() masks stats::filter()
-✖ dplyr::lag()    masks stats::lag()
-✖ tidyr::pack()   masks Matrix::pack()
-✖ mosaic::stat()  masks ggplot2::stat()
-✖ mosaic::tally() masks dplyr::tally()
-✖ tidyr::unpack() masks Matrix::unpack()
-ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="fu">library</span>(fivethirtyeight)</span>
-<span id="cb13-2"><a href="#cb13-2"></a></span>
-<span id="cb13-3"><a href="#cb13-3"></a>survey <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"https://ajohns24.github.io/data/112/about_us_2024.csv"</span>)</span>
-<span id="cb13-4"><a href="#cb13-4"></a></span>
-<span id="cb13-5"><a href="#cb13-5"></a><span class="fu">ggplot</span>(survey, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">fct_infreq</span>(hangout))) <span class="sc">+</span></span>
-<span id="cb13-6"><a href="#cb13-6"></a>  <span class="fu">labs</span>( </span>
-<span id="cb13-7"><a href="#cb13-7"></a>    <span class="at">title =</span> <span class="st">"Macalester College students's favorite places to hang out"</span>,</span>
-<span id="cb13-8"><a href="#cb13-8"></a>    <span class="at">x =</span> <span class="st">"Place"</span>, </span>
-<span id="cb13-9"><a href="#cb13-9"></a>    <span class="at">y =</span> <span class="st">"Amount of Students"</span>) <span class="sc">+</span></span>
-<span id="cb13-10"><a href="#cb13-10"></a>  <span class="fu">geom_bar</span>(<span class="at">fill =</span> <span class="st">"skyblue"</span>, <span class="at">color =</span> <span class="st">"pink"</span>) <span class="sc">+</span></span>
-<span id="cb13-11"><a href="#cb13-11"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+</header><div class="cell">
+<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">library</span>(mosaic)</span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="fu">library</span>(fivethirtyeight)</span>
+<span id="cb1-4"><a href="#cb1-4"></a></span>
+<span id="cb1-5"><a href="#cb1-5"></a>survey <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"https://ajohns24.github.io/data/112/about_us_2024.csv"</span>)</span>
+<span id="cb1-6"><a href="#cb1-6"></a></span>
+<span id="cb1-7"><a href="#cb1-7"></a><span class="fu">ggplot</span>(survey, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">fct_infreq</span>(hangout))) <span class="sc">+</span></span>
+<span id="cb1-8"><a href="#cb1-8"></a>  <span class="fu">labs</span>( </span>
+<span id="cb1-9"><a href="#cb1-9"></a>    <span class="at">title =</span> <span class="st">"Macalester College students's favorite places to hang out"</span>,</span>
+<span id="cb1-10"><a href="#cb1-10"></a>    <span class="at">x =</span> <span class="st">"Place"</span>, </span>
+<span id="cb1-11"><a href="#cb1-11"></a>    <span class="at">y =</span> <span class="st">"Amount of Students"</span>,</span>
+<span id="cb1-12"><a href="#cb1-12"></a>    <span class="at">caption =</span> <span class="st">"Author: Kirsty Herrera Garcia"</span>) <span class="sc">+</span></span>
+<span id="cb1-13"><a href="#cb1-13"></a>  <span class="fu">geom_bar</span>(<span class="at">fill =</span> <span class="st">"skyblue"</span>, <span class="at">color =</span> <span class="st">"pink"</span>) <span class="sc">+</span></span>
+<span id="cb1-14"><a href="#cb1-14"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output-display">
 <div>
 <figure class="figure"><p><img src="bw-uni_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
@@ -1049,27 +988,34 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb14" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb14-1"><a href="#cb14-1"></a><span class="co">---</span></span>
-<span id="cb14-2"><a href="#cb14-2"></a><span class="an">title:</span><span class="co"> "Univariate Viz"</span></span>
-<span id="cb14-3"><a href="#cb14-3"></a><span class="co">---</span></span>
-<span id="cb14-4"><a href="#cb14-4"></a></span>
-<span id="cb14-5"><a href="#cb14-5"></a>Use this file to generate a professional looking **univariate** visualization. The visualization will not perfect the first time but you are expected to improve on it throughout the semester especially after covering advanced topics such as effective viz.</span>
-<span id="cb14-6"><a href="#cb14-6"></a></span>
-<span id="cb14-9"><a href="#cb14-9"></a><span class="in">```{r}</span></span>
-<span id="cb14-10"><a href="#cb14-10"></a><span class="fu">library</span>(mosaic)</span>
-<span id="cb14-11"><a href="#cb14-11"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb14-12"><a href="#cb14-12"></a><span class="fu">library</span>(fivethirtyeight)</span>
-<span id="cb14-13"><a href="#cb14-13"></a></span>
-<span id="cb14-14"><a href="#cb14-14"></a>survey <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"https://ajohns24.github.io/data/112/about_us_2024.csv"</span>)</span>
-<span id="cb14-15"><a href="#cb14-15"></a></span>
-<span id="cb14-16"><a href="#cb14-16"></a><span class="fu">ggplot</span>(survey, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">fct_infreq</span>(hangout))) <span class="sc">+</span></span>
-<span id="cb14-17"><a href="#cb14-17"></a>  <span class="fu">labs</span>( </span>
-<span id="cb14-18"><a href="#cb14-18"></a>    <span class="at">title =</span> <span class="st">"Macalester College students's favorite places to hang out"</span>,</span>
-<span id="cb14-19"><a href="#cb14-19"></a>    <span class="at">x =</span> <span class="st">"Place"</span>, </span>
-<span id="cb14-20"><a href="#cb14-20"></a>    <span class="at">y =</span> <span class="st">"Amount of Students"</span>) <span class="sc">+</span></span>
-<span id="cb14-21"><a href="#cb14-21"></a>  <span class="fu">geom_bar</span>(<span class="at">fill =</span> <span class="st">"skyblue"</span>, <span class="at">color =</span> <span class="st">"pink"</span>) <span class="sc">+</span></span>
-<span id="cb14-22"><a href="#cb14-22"></a>  <span class="fu">theme_minimal</span>()</span>
-<span id="cb14-23"><a href="#cb14-23"></a><span class="in">```</span></span>
+<div class="sourceCode" id="cb2" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1"></a><span class="co">---</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a><span class="an">title:</span><span class="co"> "Univariate Viz"</span></span>
+<span id="cb2-3"><a href="#cb2-3"></a><span class="an">execute:</span></span>
+<span id="cb2-4"><a href="#cb2-4"></a><span class="co">  echo: true</span></span>
+<span id="cb2-5"><a href="#cb2-5"></a><span class="co">  warning: false</span></span>
+<span id="cb2-6"><a href="#cb2-6"></a><span class="co">  error: false</span></span>
+<span id="cb2-7"><a href="#cb2-7"></a></span>
+<span id="cb2-8"><a href="#cb2-8"></a><span class="an">format:</span><span class="co"> </span></span>
+<span id="cb2-9"><a href="#cb2-9"></a><span class="co">  html: </span></span>
+<span id="cb2-10"><a href="#cb2-10"></a><span class="co">    code-fold: true</span></span>
+<span id="cb2-11"><a href="#cb2-11"></a><span class="co">---</span></span>
+<span id="cb2-12"><a href="#cb2-12"></a></span>
+<span id="cb2-15"><a href="#cb2-15"></a><span class="in">```{r}</span></span>
+<span id="cb2-16"><a href="#cb2-16"></a><span class="fu">library</span>(mosaic)</span>
+<span id="cb2-17"><a href="#cb2-17"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb2-18"><a href="#cb2-18"></a><span class="fu">library</span>(fivethirtyeight)</span>
+<span id="cb2-19"><a href="#cb2-19"></a></span>
+<span id="cb2-20"><a href="#cb2-20"></a>survey <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"https://ajohns24.github.io/data/112/about_us_2024.csv"</span>)</span>
+<span id="cb2-21"><a href="#cb2-21"></a></span>
+<span id="cb2-22"><a href="#cb2-22"></a><span class="fu">ggplot</span>(survey, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">fct_infreq</span>(hangout))) <span class="sc">+</span></span>
+<span id="cb2-23"><a href="#cb2-23"></a>  <span class="fu">labs</span>( </span>
+<span id="cb2-24"><a href="#cb2-24"></a>    <span class="at">title =</span> <span class="st">"Macalester College students's favorite places to hang out"</span>,</span>
+<span id="cb2-25"><a href="#cb2-25"></a>    <span class="at">x =</span> <span class="st">"Place"</span>, </span>
+<span id="cb2-26"><a href="#cb2-26"></a>    <span class="at">y =</span> <span class="st">"Amount of Students"</span>,</span>
+<span id="cb2-27"><a href="#cb2-27"></a>    <span class="at">caption =</span> <span class="st">"Author: Kirsty Herrera Garcia"</span>) <span class="sc">+</span></span>
+<span id="cb2-28"><a href="#cb2-28"></a>  <span class="fu">geom_bar</span>(<span class="at">fill =</span> <span class="st">"skyblue"</span>, <span class="at">color =</span> <span class="st">"pink"</span>) <span class="sc">+</span></span>
+<span id="cb2-29"><a href="#cb2-29"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb2-30"><a href="#cb2-30"></a><span class="in">```</span></span>
 </code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
