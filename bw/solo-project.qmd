@@ -1,5 +1,5 @@
 ---
-title: "Solo project"
+title: "Solo Project"
 execute:
   echo: true
   warning: false
@@ -33,7 +33,9 @@ mn_winners <- mn_election |>
   TRUE ~ "Other"
   ))
 ```
-```{r setup-map, message = FALSE, warning = FALSE}
+```{r}
+#| fig-height: 8
+#| fig-width: 12
 # Minnesota county map
 library(tigris)
 options(tigris_use_cache = TRUE)
@@ -51,9 +53,19 @@ ggplot(mn_map) +
   labs(title = "Minnesota 2016 Presidential Election Results (by county)",
        subtitle = "Candidate with the most votes in each county - not proportional to population",
        fill = "Winning Candidate",
-       caption = "Source: MIT Election Data and Science Lab, Harvard Dataverse (2019)") +
-  theme_map()
+       caption = "Source: MIT Election Data and Science Lab, Harvard Dataverse (2019)
+       Author: Kirsty Herrera Garcia") +
+  theme_map() +
+    theme_map() +
+  theme(
+    plot.title = element_text(size = 20, face = "bold"),
+    plot.subtitle = element_text(size = 14),
+    legend.title = element_text(size = 14),
+    legend.text = element_text(size = 12),
+    plot.caption = element_text(size = 10)
+  )
 ```
+
 ::: {.callout-note title="Summary"}
 
 This visualization shows the results of the 2016 presidential election per county in the state of Minnesota. This data was accessed via Harvard Dataverse, a publicly available database housing this 2019 study by the Massachusetts Institute of Technology in Cambridge, Massachusetts, where MIT Election Data and Science Lab collects, examines, and distributes election data. At the same time, the data was curated from the American Community Survey and election results. It is a collection of demographic, past federal, and past state election data for counties in the United States from 2012 to 2016. The missing values from two counties were not registered in the data set but there is not explanation as why that happened. 

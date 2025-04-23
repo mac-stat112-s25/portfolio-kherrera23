@@ -11,8 +11,6 @@ format:
 
 ---
 
-Use this file to generate a professional looking **quadvariate** visualization.  The visualization will not perfect the first time but you are expected to improve on it throughout the semester especially after covering advanced topics such as effective viz.
-
 ```{r}
 library(tidyverse)
 
@@ -23,9 +21,10 @@ ggplot(weather, aes(y = temp3pm, x = temp9am, color = location, shape = raintoda
   labs(
     title = "The relationship of 9am and 3pm weather in Australian cities",
     x = "Temperature at 9 am",
-    y = "temperature at 3 pm",
+    y = "Temperature at 3 pm",
     color = "Location",
-    shape = "Rain Today"
+    shape = "Rain Today",
+    caption = "Author: Kirsty Herrera Garcia"
   ) +
   geom_point()
 ```

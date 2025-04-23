@@ -1,6 +1,13 @@
 ---
 title: "Exam 1"
-format: html
+execute:
+  echo: true
+  warning: false
+  error: false
+
+format: 
+  html: 
+    code-fold: true
 ---
 
 ```{r}

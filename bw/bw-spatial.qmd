@@ -11,7 +11,6 @@ format:
 
 ---
 
-Use this file to generate a professional looking **spatial** visualization.  The visualization will not perfect the first time but you are expected to improve on it throughout the semester especially after covering advanced topics such as effective viz.
 
 ```{r}
 library(tidyverse)
@@ -35,7 +34,8 @@ ggplot(state_counts, aes(map_id = state, fill = num_agencies)) +
   geom_map(map = states_map) +
   labs(title = "Geographic Distribution of Reporting Agencies",
        fill = "Number of Agencies",
-       caption = "Source: FBI UCR Program") +
+       caption = "Source: FBI UCR Program.
+       Author: Kirsty Herrera Garcia") +
   expand_limits(x = states_map$long, y = states_map$lat) +
   theme_void() +
   scale_fill_viridis_c()

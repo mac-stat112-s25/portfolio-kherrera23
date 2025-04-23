@@ -1,7 +1,16 @@
 ---
 title: "Exam 2"
-format: html
+execute:
+  echo: true
+  warning: false
+  error: false
+
+format: 
+  html: 
+    code-fold: true
 ---
+
+# Background
 
 ```{r}
 library(tidytuesdayR)
@@ -36,6 +45,8 @@ fc <- fc |>
                                     "Nuts" = "Nuts inc. Peanut Butter"))
 
 ```
+# Most Consuming Countries 
+
 ::: {.callout-note title="Research Question 1"}
 
 Which 5 countries consume the most food are?
@@ -63,11 +74,13 @@ ggplot(top5_consumers, aes(x = reorder(country, total_consumption), y = total_co
        y = "Total Consumption (kg/person/year)") +
   theme_minimal()
 ```
+# Most Consuming Countries of Each Food
+
 ::: {.callout-note title="Research Question 2"}
 
 Which top 5 countries consume each food are?
 
-  - Show the answer as a 3-column table (show the food category as the first column followed by country snd consumption) and as a graph.
+  - Show the answer as a 3-column table (show the food category as the first column followed by country and consumption) and as a graph.
   - For each food, sort the countries based on consumption from largest to smallest.
   - Use the cleaned dataframe
  
@@ -76,7 +89,111 @@ Which top 5 countries consume each food are?
 ```{r}
 top5_per_food <- fc |>
   group_by(food_category, country) |>
-  summarise(total_consumption = sum(consumption, na.rm = TRUE))
+  summarise(total_consumption = sum(consumption, na.rm = TRUE)) |>
+  arrange(food_category, desc(total_consumption)) |>
+  mutate(rank = row_number()) |>
+  filter(rank <= 5) |>
+  select(food_category, country, total_consumption)
+
+top5_per_food
+```
+```{r}
+#| fig-height: 10
+#| fig-width: 12
+ggplot(top5_per_food, aes(y = reorder(country, total_consumption),
+                          x = total_consumption, fill = country)) +
+  geom_col(show.legend = FALSE) +
+  facet_wrap(~ food_category, scales = "free_y") +
+  labs(title = "Top 5 Countries by Food Category Consumption",
+       x = "Country",
+       y = "Consumption (kg/person/year)") +
+  theme_minimal()
 ```
 
+# Food Consumption 
 
+::: {.callout-note title="Research Question 3"}
+
+What does the consumption of each food look like?
+
+ - show a choropleth map for each food.
+ - Use the cleaned dataframe. 
+ 
+:::
+
+## Viz: Attempt 1
+
+```{r}
+ne_countries(returnclass = "sf") |>
+  select(name, geometry) |>
+  left_join(fc |> select(-co2_emmission),
+            join_by(name == country)) |>
+  ggplot() +
+  geom_sf(aes(fill = consumption)) +
+  facet_wrap(~food_category) +
+  theme(legend.position = "bottom")
+```
+
+What problems does the above visualization suffer?
+ - Unclear or meaningless NA facet. 
+ - The shading is very dark for most countries across facets, making hard to distinguish differences in consumption
+ - There are no country borders, making harder to distinguish regions
+ - Some countries are missing, posible because when joining data sets, the names were different spelled. 
+ 
+## Viz: Attempt 2 
+
+```{r}
+ne_countries(returnclass = "sf") |>
+  select(name, geometry) |>
+  mutate(name = ifelse(name == "United States of America", "USA", name)) |>
+  mutate(name = ifelse(name == "Bosnia and Herz.", "Bosnia and Herzegovina", name)) |>
+  mutate(name = ifelse(name == "Czechia", "Czech Republic", name)) |>
+  mutate(name = ifelse(name == "Taiwan", "Taiwan. ROC", name)) |>
+  left_join(fc |> select(-co2_emmission),
+            join_by(name == country)) |>
+  pivot_wider(names_from = food_category,
+              values_from = consumption) |>
+  select(-"NA") |>
+  pivot_longer(cols = c(-name, -geometry),
+               names_to = "food_category",
+               values_to = "consumption") |>
+  ggplot() +
+  geom_sf(aes(fill = consumption)) +
+  facet_wrap(~food_category) +
+  theme(legend.position = "bottom")
+```
+
+What problems does the above visualization suffer?
+ - The color palette doesn't differentiate well between low and high consumption. It is also no inclusive for colorblind viewers.
+ - There are no countries labels or border lines. 
+ - Many small maps are hard to read and compared. 
+ 
+## Viz: Attempt 3
+
+```{r}
+ne_countries(returnclass = "sf") |>
+  select(name, geometry) |>
+  mutate(name = ifelse(name == "United States of America", "USA", name)) |>
+  mutate(name = ifelse(name == "Bosnia and Herz.", "Bosnia and Herzegovina", name)) |>
+  mutate(name = ifelse(name == "Czechia", "Czech Republic", name)) |>
+  mutate(name = ifelse(name == "Taiwan", "Taiwan. ROC", name)) |>
+  left_join(
+    fc |> 
+      select(-co2_emmission) |>
+      group_by(food_category) |>
+      mutate(consumption = (consumption - mean(consumption))/sd(consumption)),
+      join_by(name == country)) |>
+  pivot_wider(names_from = food_category, values_from = consumption) |>
+  select(-"NA") |>
+  pivot_longer(cols = c(-name, -geometry),
+               names_to = "food_category",
+               values_to = "consumption") |>
+  ggplot() +
+  geom_sf(aes(fill = consumption)) +
+  facet_wrap(~food_category) +
+  theme(legend.position = "bottom")
+```
+How can the visualization be enhanced?
+ - Color scale improvements 
+ - Small countries can be hard to see on a world map
+ - Countries outlines/borders could help visualization 

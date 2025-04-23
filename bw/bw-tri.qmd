@@ -11,15 +11,12 @@ format:
 
 ---
 
-Use this file to generate a professional looking **trivariate** visualization.  The visualization will not perfect the first time but you are expected to improve on it throughout the semester especially after covering advanced topics such as effective viz.
-
 ```{r}
 
 library(mosaic)
 library(dplyr)
 library(tidyr)
 data("Birthdays")
-head(Birthdays)
 library(lubridate)
 
 daily_births <- Birthdays |>
@@ -38,7 +35,8 @@ ggplot(daily_births_1980, aes(y = total, x = date, color = week_day)) +
   labs(
     title = "Daily Births in 1980 by Day of the Week",
     x = "Date",
-    y = "Number of Births") +
+    y = "Number of Births",
+    caption = "Author: Kirsty Herrera Garcia") +
   theme_minimal()
 ```
 

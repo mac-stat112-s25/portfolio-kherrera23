@@ -1,8 +1,14 @@
 ---
 title: "Univariate Viz"
----
+execute:
+  echo: true
+  warning: false
+  error: false
 
-Use this file to generate a professional looking **univariate** visualization. The visualization will not perfect the first time but you are expected to improve on it throughout the semester especially after covering advanced topics such as effective viz.
+format: 
+  html: 
+    code-fold: true
+---
 
 ```{r}
 library(mosaic)
@@ -15,7 +21,8 @@ ggplot(survey, aes(x = fct_infreq(hangout))) +
   labs( 
     title = "Macalester College students's favorite places to hang out",
     x = "Place", 
-    y = "Amount of Students") +
+    y = "Amount of Students",
+    caption = "Author: Kirsty Herrera Garcia") +
   geom_bar(fill = "skyblue", color = "pink") +
   theme_minimal()
 ```
