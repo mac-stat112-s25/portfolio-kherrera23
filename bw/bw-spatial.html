@@ -360,7 +360,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-26"><a href="#cb1-26"></a>  <span class="fu">scale_fill_viridis_c</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display">
 <div>
-<figure class="figure"><p><img src="bw-spatial_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="bw-spatial_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="1440"></p>
 </figure>
 </div>
 </div>
@@ -1015,33 +1015,35 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb2-13"><a href="#cb2-13"></a></span>
 <span id="cb2-14"><a href="#cb2-14"></a></span>
 <span id="cb2-17"><a href="#cb2-17"></a><span class="in">```{r}</span></span>
-<span id="cb2-18"><a href="#cb2-18"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb2-19"><a href="#cb2-19"></a><span class="fu">library</span>(openintro)</span>
-<span id="cb2-20"><a href="#cb2-20"></a><span class="fu">library</span>(sf)</span>
-<span id="cb2-21"><a href="#cb2-21"></a><span class="fu">library</span>(maps)</span>
-<span id="cb2-22"><a href="#cb2-22"></a><span class="fu">library</span>(leaflet)</span>
-<span id="cb2-23"><a href="#cb2-23"></a><span class="fu">library</span>(rnaturalearth)</span>
-<span id="cb2-24"><a href="#cb2-24"></a><span class="fu">library</span>(mosaic)</span>
-<span id="cb2-25"><a href="#cb2-25"></a></span>
-<span id="cb2-26"><a href="#cb2-26"></a>agencies <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">'https://raw.githubusercontent.com/rfordatascience/tidytuesday/main/data/2025/2025-02-18/agencies.csv'</span>)</span>
+<span id="cb2-18"><a href="#cb2-18"></a><span class="co">#| fig-height: 10</span></span>
+<span id="cb2-19"><a href="#cb2-19"></a><span class="co">#| fig-width: 15</span></span>
+<span id="cb2-20"><a href="#cb2-20"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb2-21"><a href="#cb2-21"></a><span class="fu">library</span>(openintro)</span>
+<span id="cb2-22"><a href="#cb2-22"></a><span class="fu">library</span>(sf)</span>
+<span id="cb2-23"><a href="#cb2-23"></a><span class="fu">library</span>(maps)</span>
+<span id="cb2-24"><a href="#cb2-24"></a><span class="fu">library</span>(leaflet)</span>
+<span id="cb2-25"><a href="#cb2-25"></a><span class="fu">library</span>(rnaturalearth)</span>
+<span id="cb2-26"><a href="#cb2-26"></a><span class="fu">library</span>(mosaic)</span>
 <span id="cb2-27"><a href="#cb2-27"></a></span>
-<span id="cb2-28"><a href="#cb2-28"></a>states_map <span class="ot">&lt;-</span> <span class="fu">map_data</span>(<span class="st">"state"</span>)</span>
+<span id="cb2-28"><a href="#cb2-28"></a>agencies <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">'https://raw.githubusercontent.com/rfordatascience/tidytuesday/main/data/2025/2025-02-18/agencies.csv'</span>)</span>
 <span id="cb2-29"><a href="#cb2-29"></a></span>
-<span id="cb2-30"><a href="#cb2-30"></a>state_counts <span class="ot">&lt;-</span> agencies <span class="sc">%&gt;%</span></span>
-<span id="cb2-31"><a href="#cb2-31"></a>  <span class="fu">group_by</span>(state) <span class="sc">%&gt;%</span></span>
-<span id="cb2-32"><a href="#cb2-32"></a>  <span class="fu">summarise</span>(<span class="at">num_agencies =</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span></span>
-<span id="cb2-33"><a href="#cb2-33"></a>  <span class="fu">mutate</span>(<span class="at">state =</span> <span class="fu">tolower</span>(state))</span>
-<span id="cb2-34"><a href="#cb2-34"></a></span>
-<span id="cb2-35"><a href="#cb2-35"></a><span class="fu">ggplot</span>(state_counts, <span class="fu">aes</span>(<span class="at">map_id =</span> state, <span class="at">fill =</span> num_agencies)) <span class="sc">+</span></span>
-<span id="cb2-36"><a href="#cb2-36"></a>  <span class="fu">geom_map</span>(<span class="at">map =</span> states_map) <span class="sc">+</span></span>
-<span id="cb2-37"><a href="#cb2-37"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Geographic Distribution of Reporting Agencies"</span>,</span>
-<span id="cb2-38"><a href="#cb2-38"></a>       <span class="at">fill =</span> <span class="st">"Number of Agencies"</span>,</span>
-<span id="cb2-39"><a href="#cb2-39"></a>       <span class="at">caption =</span> <span class="st">"Source: FBI UCR Program.</span></span>
-<span id="cb2-40"><a href="#cb2-40"></a><span class="st">       Author: Kirsty Herrera Garcia"</span>) <span class="sc">+</span></span>
-<span id="cb2-41"><a href="#cb2-41"></a>  <span class="fu">expand_limits</span>(<span class="at">x =</span> states_map<span class="sc">$</span>long, <span class="at">y =</span> states_map<span class="sc">$</span>lat) <span class="sc">+</span></span>
-<span id="cb2-42"><a href="#cb2-42"></a>  <span class="fu">theme_void</span>() <span class="sc">+</span></span>
-<span id="cb2-43"><a href="#cb2-43"></a>  <span class="fu">scale_fill_viridis_c</span>()</span>
-<span id="cb2-44"><a href="#cb2-44"></a><span class="in">```</span></span>
+<span id="cb2-30"><a href="#cb2-30"></a>states_map <span class="ot">&lt;-</span> <span class="fu">map_data</span>(<span class="st">"state"</span>)</span>
+<span id="cb2-31"><a href="#cb2-31"></a></span>
+<span id="cb2-32"><a href="#cb2-32"></a>state_counts <span class="ot">&lt;-</span> agencies <span class="sc">%&gt;%</span></span>
+<span id="cb2-33"><a href="#cb2-33"></a>  <span class="fu">group_by</span>(state) <span class="sc">%&gt;%</span></span>
+<span id="cb2-34"><a href="#cb2-34"></a>  <span class="fu">summarise</span>(<span class="at">num_agencies =</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span></span>
+<span id="cb2-35"><a href="#cb2-35"></a>  <span class="fu">mutate</span>(<span class="at">state =</span> <span class="fu">tolower</span>(state))</span>
+<span id="cb2-36"><a href="#cb2-36"></a></span>
+<span id="cb2-37"><a href="#cb2-37"></a><span class="fu">ggplot</span>(state_counts, <span class="fu">aes</span>(<span class="at">map_id =</span> state, <span class="at">fill =</span> num_agencies)) <span class="sc">+</span></span>
+<span id="cb2-38"><a href="#cb2-38"></a>  <span class="fu">geom_map</span>(<span class="at">map =</span> states_map) <span class="sc">+</span></span>
+<span id="cb2-39"><a href="#cb2-39"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Geographic Distribution of Reporting Agencies"</span>,</span>
+<span id="cb2-40"><a href="#cb2-40"></a>       <span class="at">fill =</span> <span class="st">"Number of Agencies"</span>,</span>
+<span id="cb2-41"><a href="#cb2-41"></a>       <span class="at">caption =</span> <span class="st">"Source: FBI UCR Program.</span></span>
+<span id="cb2-42"><a href="#cb2-42"></a><span class="st">       Author: Kirsty Herrera Garcia"</span>) <span class="sc">+</span></span>
+<span id="cb2-43"><a href="#cb2-43"></a>  <span class="fu">expand_limits</span>(<span class="at">x =</span> states_map<span class="sc">$</span>long, <span class="at">y =</span> states_map<span class="sc">$</span>lat) <span class="sc">+</span></span>
+<span id="cb2-44"><a href="#cb2-44"></a>  <span class="fu">theme_void</span>() <span class="sc">+</span></span>
+<span id="cb2-45"><a href="#cb2-45"></a>  <span class="fu">scale_fill_viridis_c</span>()</span>
+<span id="cb2-46"><a href="#cb2-46"></a><span class="in">```</span></span>
 </code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
