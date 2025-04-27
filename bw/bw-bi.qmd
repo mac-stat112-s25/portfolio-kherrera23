@@ -14,25 +14,28 @@ format:
 library(tidyverse)
 library(ggplot2)
 library(dplyr)
-library(fivethirtyeight)
+pixar_films <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/main/data/2025/2025-03-11/pixar_films.csv')
 
-data(bechdel)
-new_bechdel <- bechdel |>
-  mutate(clean_test = factor(clean_test, c("nowomen", "notalk", "men", "dubious", "ok"))) |>
-  mutate(half_decades = cut(year, breaks = seq(1969, 2014, by = 5)))
+pixar_films <- pixar_films |>
+  drop_na(run_time) |>
+  mutate(film_length = case_when(
+    run_time < 85 ~ "Short film", 
+    run_time >= 85 & run_time <= 115 ~ "Medium film",
+    run_time > 115 ~ "Long film")) |>
+  mutate(film_length = factor(film_length, levels = c("Short film", "Medium film", "Long film")))
 
-```
+pixar_films <- pixar_films |>
+  mutate(release_year = year(release_date)) |>
+  group_by(release_year) |>
+  mutate(avr_run_time = mean(run_time), count = n())
 
-```{r}
-ggplot(new_bechdel, aes(x = half_decades, fill = clean_test)) +
-  geom_bar(position = "fill") +
-  scale_fill_manual(
-    name = "Test Results",
-    values = c("red", "salmon", "pink", "steelblue1", "steelblue4")) +
-  labs(
-    title = "Hollywood movies that pass the Bechdel test throughout time",
-    x = "Time frame",
-    y = "Percentage of movies") +
-    theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1)) 
+ggplot(pixar_films, aes(x = release_year, y = avr_run_time)) +
+  geom_line() +
+  geom_point() +
+  labs(title = "Average Pixar Film Length Over the Years",
+       x = "Year",
+       y = "Average Films Length (Minutes)",
+       caption = "Author: Kirsty Herrera Garcia") +
+  theme_minimal()
 ```
 

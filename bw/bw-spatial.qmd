@@ -13,6 +13,8 @@ format:
 
 
 ```{r}
+#| fig-height: 10
+#| fig-width: 15
 library(tidyverse)
 library(openintro)
 library(sf)
